@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
 
     <title>PetClinic :: a Fullmoon/Redbean Framework demonstration</title>
 
@@ -85,7 +85,7 @@
         <div class="row">
           <div class="col-12 text-center">
           Fullmoon PetClinic - powered by Redbean
-          <img src="/images/favicon.ico" alt="" class="logo" style="width:32px">
+          <img src="/images/powered.png" alt="" class="logo" style="width:32px">
           </div>
         </div>
       </div>

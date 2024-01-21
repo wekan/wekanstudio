@@ -43,3 +43,6 @@ luac.out
 redbean.*
 *.com
 *.db
+
+# Mac
+.DS_Store
