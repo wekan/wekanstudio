@@ -232,8 +232,8 @@ function pc:initDb()
     local dbm = fm.makeStorage(DBNAME)
     self.dbm = dbm
     local dbconn = self:dbconn()
-    dbconn:runSqlInFile("./db/schema.sql")
-    dbconn:runSqlInFile("./db/data.sql")
+    dbconn:runSqlInFile("/zip/.lua/schema.sql")
+    dbconn:runSqlInFile("/zip/.lua/data.sql")
 
 end
 
