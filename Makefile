@@ -11,10 +11,17 @@ PROJECT=redbean
 REDBEAN=${PROJECT}.com
 REDBEAN_VERSION=2.2
 # leave empty for default, or use one of tiny-, asan-, original-, static-, unsecure-, original-tinylinux-
-# asan mode currently not working on M1 Macs
+# If you want the extra security oomph it's recommended you deploy ASAN to
+# x86-64 Linux or OpenBSD and make use of the unix.pledge() and unix.unveil() functions.
 #REDBEAN_MODE=
-REDBEAN_MODE=asan-
-REDBEAN_DL=https://redbean.dev/redbean-${REDBEAN_MODE}${REDBEAN_VERSION}.com
+#REDBEAN_MODE=static-
+#REDBEAN_DL=https://redbean.dev/redbean-${REDBEAN_MODE}${REDBEAN_VERSION}.com
+
+# asan mode currently not working on M1 Macs.
+# There's no ASAN for ARM64 yet.
+# This download URL works for M1. Later will be newer than 2.2 release of redbean to official URLs,
+# then will also work official version URLs.
+REDBEAN_DL=https://cosmo.zip/pub/cosmos/bin/redbean
 
 SQLITE3=sqlite3.com
 SQLITE3_DL=https://redbean.dev/sqlite3.com
