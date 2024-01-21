@@ -73,7 +73,7 @@
     <div class="container xd-container">
      <body>
         {% function block.content() %}
-        <img src="/images/redbean.png" class="logo">
+        <img src="/images/favicon.ico" class="logo">
         {% end %}
         {% block.content() %}
     </body>
