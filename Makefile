@@ -4,7 +4,7 @@
 # │ as it is written in the following disclaimers:                   │
 # │   • http://unlicense.org/                                        │
 # ╚─────────────────────────────────────────────────────────────────*/
-.PHONY: all clean test log ls log start start-daemon restart-daemon stop-daemon
+.PHONY: all clean test log ls log start startdev start-daemon restart-daemon stop-daemon
 
 # Change redbean to whatever you want
 PROJECT=redbean
@@ -73,6 +73,11 @@ log: ${PROJECT}.log
 	tail -f ${PROJECT}.log
 
 start: add ${REDBEAN}
+	./${REDBEAN} -s
+
+# Verbose below. More silence above.
+
+startdev: add ${REDBEAN}
 	./${REDBEAN} -vv
 
 start-daemon: ${REDBEAN}
