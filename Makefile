@@ -4,7 +4,7 @@
 # │ as it is written in the following disclaimers:                   │
 # │   • http://unlicense.org/                                        │
 # ╚─────────────────────────────────────────────────────────────────*/
-.PHONY: all clean test log ls log start startdev start-daemon restart-daemon stop-daemon
+.PHONY: all clean test log ls log start start-daemon restart-daemon stop-daemon
 
 # Change redbean to whatever you want
 PROJECT=redbean
@@ -105,7 +105,6 @@ stop-daemon: ${PROJECT}.pid
 		rm ${PROJECT}.pid \
     
 benchmark:
-	#wrk --latency -t 1000 -c 1000 --timeout 5s -H 'Accept-Encoding: gzip' http://127.0.0.1:8000/
 	wrk -H 'Accept-Encoding: gzip' -t 12 -c 120 http://127.0.0.1:8000/
 
 clean:
