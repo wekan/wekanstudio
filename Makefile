@@ -100,7 +100,8 @@ stop-daemon: ${PROJECT}.pid
 		rm ${PROJECT}.pid \
     
 benchmark:
-	wrk --latency -t 1000 -c 1000 --timeout 5s -H 'Accept-Encoding: gzip' http://127.0.0.1:8000/
+	#wrk --latency -t 1000 -c 1000 --timeout 5s -H 'Accept-Encoding: gzip' http://127.0.0.1:8000/
+	wrk -H 'Accept-Encoding: gzip' -t 12 -c 120 http://127.0.0.1:8000/
 
 clean:
 	rm -f ${PROJECT}.log ${PROJECT}.pid ${REDBEAN} ${REDBEAN}.template ${SQLITE3} ${ZIP} ${UNZIP} ${DEFINITIONS}
