@@ -4,7 +4,7 @@ package.path=package.path..";/zip/.lua/?.lua"
 print(package.path)
 print(debug.getinfo(1,"S").source)
 
-pc = require "petclinic"
+pc = require "wekan"
 
 pc:initDb()
 pc.run(8000)

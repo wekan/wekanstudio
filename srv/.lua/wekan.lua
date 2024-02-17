@@ -225,7 +225,7 @@ function pc.run(port)
     fm.run({ port = port or 8000 })
 end
 
-local DBNAME = 'fullmoon_petclinic.db'
+local DBNAME = 'wekan.db'
 
 function pc:initDb()
     fm.logInfo("Initializing database")
