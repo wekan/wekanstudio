@@ -7,7 +7,7 @@
 .PHONY: all clean test log ls log start start-daemon restart-daemon stop-daemon
 
 # Change redbean to whatever you want
-PROJECT=redbean
+PROJECT=wekan
 REDBEAN=${PROJECT}.com
 REDBEAN_VERSION=2.2
 # leave empty for default, or use one of tiny-, asan-, original-, static-, unsecure-, original-tinylinux-

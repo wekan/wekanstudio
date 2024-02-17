@@ -21,7 +21,7 @@ https://github.com/wekan/wekan/wiki/WeKan-Multiverse-Roadmap
   - From Cosmopolitan https://github.com/jart/cosmopolitan
   - Trying to use all possible security features of Redbean
   - Windows/Linux/Mac/BSD x86_86/arm64 single executeable redbean.com
-    - Files added to end of redbean.com like embedded .zip file
+    - Files added to end of wekan.com like embedded .zip file
     - Cron like feature to be used with WeKan scheduled tasks
     - SQLite3 database wekan.db, separate file
       - Database tables and fields lowercase (optional underscore _ if 2 words together)
