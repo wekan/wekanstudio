@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
 
-    <title>PetClinic :: a Fullmoon/Redbean Framework demonstration</title>
+    <title>WeKan</title>
 
     <!--[if lt IE 9]>
     <script src="/js/html5shiv.js"></script>
@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
     <div class="container-fluid">
-        <span class="navbar-brand">Fullmoon PetClinic</span>
+        <span class="navbar-brand">WeKan</span>
         <!--<a class="navbar-brand" href="/"><span></span></a>-->
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar">
