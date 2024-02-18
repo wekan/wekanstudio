@@ -208,7 +208,7 @@ local function allboardsList(r)
   local dbconn = pc:dbconn()
   -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where archived='false' AND type='board' order by stars DESC, sort ASC;"))
   -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
-  local boards = assert(dbconn:query("select title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
+  local boards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
   return fm.serveContent("boards/allboardsList", {boards = boards})
 end
 
