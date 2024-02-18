@@ -1,0 +1,32 @@
+{% function block.content() %}
+
+<h2>All Boards</h2>
+
+<table id="allboards" class="table table-striped">
+  <thead>
+    <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Stars</th>
+    <th>Permission</th>
+    <th>Slug</th>
+    <th>Type</th>
+    <th>Sort</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for _, board in ipairs(boards) do %}
+  <tr>
+    <td>{%= board.title%}</td>
+    <td>{%= board.description%}</td>
+    <td>{%= board.stars%}</td>
+    <td>{%= board.permission%}</td>
+    <td>{%= board.slug%}</td>
+    <td>{%= board.type%}</td>
+    <td>{%= board.sort%}</td>
+  </tr>
+  {% end %}
+  </tbody>
+</table>
+{% end %}
+{% render('layout',  {active_menu='allboards'}) %}

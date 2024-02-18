@@ -45,6 +45,13 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link {% if active_menu=='allboards' then%}active{%end%}" href="/allboards" title="allboards">
+                        <span class="fa fa-th-list"></span>
+                        <span>All Boards</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link {% if active_menu=='owners' then%}active{%end%}" href="/owners/find" title="find owners">
                         <span class="fa fa-search"></span>
                         <span>Find owners</span>

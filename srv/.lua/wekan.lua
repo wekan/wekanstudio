@@ -204,7 +204,13 @@ local function vetList(r)
   return fm.serveContent("vets/vetList", {vets = vets}) 
 end        
 
-
+local function allboardsList(r)
+  local dbconn = pc:dbconn()
+  -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where archived='false' AND type='board' order by stars DESC, sort ASC;"))
+  -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
+  local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
+  return fm.serveContent("boards/allboardsList", {boards = boards})
+end
 
 fm.setRoute("/owners/new", newOwner)
 fm.setRoute(fm.GET "/owners/find", findOwners)
@@ -214,6 +220,7 @@ fm.setRoute("/owners/:id[%d]/pets/new", newPet)
 fm.setRoute("/owners/:id[%d]/pets/:pet_id[%d]/edit", editPet)
 fm.setRoute("/owners/:id[%d]/pets/:pet_id[%d]/visits/new", newVisit)
 fm.setRoute(fm.GET "/vets", vetList)
+fm.setRoute(fm.GET "/allboards", allboardsList)
 fm.setRoute(fm.GET "/", welcome)
 fm.setRoute(fm.GET "/oops", showError)
 
@@ -232,8 +239,8 @@ function pc:initDb()
     local dbm = fm.makeStorage(DBNAME)
     self.dbm = dbm
     local dbconn = self:dbconn()
-    dbconn:runSqlInFile("/zip/.lua/schema.sql")
-    dbconn:runSqlInFile("/zip/.lua/data.sql")
+    -- dbconn:runSqlInFile("/zip/.lua/schema.sql")
+    -- dbconn:runSqlInFile("/zip/.lua/data.sql")
 
 end
 
