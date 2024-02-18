@@ -7,6 +7,7 @@
     <tr>
     <th>Title</th>
     <th>Description</th>
+    <th>Color</th>
     <th>Stars</th>
     <th>Permission</th>
     <th>Slug</th>
@@ -19,6 +20,7 @@
   <tr>
     <td>{%= board.title%}</td>
     <td>{%= board.description%}</td>
+    <td>{%= board.color%}</td>
     <td>{%= board.stars%}</td>
     <td>{%= board.permission%}</td>
     <td>{%= board.slug%}</td>
