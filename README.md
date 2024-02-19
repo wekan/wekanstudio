@@ -13,7 +13,7 @@ Web framework is based on:
 
 - [Cosmopolitan](https://github.com/jart/cosmopolitan) cross-platform one executeable for Windows/Mac/Linux/BSD x86_64/arm64. There is no need for separate executeable for each CPU/OS.
 - [Blink](https://github.com/jart/blink), that is x86_64 emulator faster than Qemu. With Blink, it is possible to run also at s390x, RISC-V etc, running like `blink wekan.com`.
-- [Redbean](https://redbean.dev) webserver tech, where to end of C89/SQLite3/Lua server executeable is added Lua code and HTML/CSS/images etc like .zip file, files read from there
+- [Redbean](https://redbean.dev) webserver tech, where to end of C89/SQLite3/Lua server executeable is added Lua code and HTML/CSS/images etc like .zip file, files read from there directly without extracting
 - [SQLite3](https://sqlite.org) database, that is included to Redbean.
 - [Fullmoon](https://github.com/pkulchenko/fullmoon) Lua web framework, that is designed for Redbean webserver.
 - [Petclinic](https://github.com/xet7/pet) example, that was ported from Java to Fullmoon, and added code that makes possible to use same SQLite database from many CGI-like Lua processes.
