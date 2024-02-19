@@ -33,6 +33,24 @@
 - No storing to browser localstorage.
 - Optional Javascript. Not required.
 
+### Scheduled actions
+
+- Using cron like features of https://redbean.dev
+- Used for:
+  - Rate limited import from other apps via API. For example:
+    - Import from Trello with attachments https://github.com/wekan/wekan/tree/main/trello
+    - Import from Jira
+    - Import from GitHub
+    - Sync Roadmap at https://github.com/wekan/wekan/wiki/Sync
+  - Timed IFTTT Rules like Trello Butler. For example:
+    - Every monday copy card from other board to this board this list.
+    - https://github.com/wekan/wekan/wiki/IFTTT
+  - Timed sync of users from LDAP:
+    - This works correctly: https://github.com/wekan/wekan/blob/main/ldap-sync/ldap-sync.py
+    - Currently, Meteor WeKan synced-cron does not sync correcly
+  - Summaries of notifications
+    - Notification Settings https://github.com/wekan/wekan/issues/2026
+
 ### Sessions
 
 - Based on database structure of Meteor WeKan https://wekan.github.io , with additional fields
