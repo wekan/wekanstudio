@@ -24,6 +24,8 @@ Native apps will be added for many CPU/OS. They will use APIs of above web frame
 
 See https://redbean.dev about DDoS protection, sandboxing, asan and other security features.
 
+If you know about any other technology, that can handle DDoS without CloudFlare, please email support@wekan.team
+
 ## Docs
 
 See at this `docs/starting.md` how to build `wekan.com` and run it. 
@@ -33,4 +35,3 @@ See at this `docs/starting.md` how to build `wekan.com` and run it.
 Showing table view of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
 
 ![screenshot](screenshot.png)
-
