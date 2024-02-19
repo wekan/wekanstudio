@@ -28,7 +28,7 @@ If you know about any other technology, that can handle DDoS without CloudFlare,
 
 ## Docs
 
-See at this `docs/starting.md` how to build `wekan.com` and run it. 
+See at this repo `docs/starting.md` how to build `wekan.com` and run it. 
 
 ## Screenshot
 
