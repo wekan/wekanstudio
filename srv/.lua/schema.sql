@@ -1,52 +1,584 @@
-CREATE TABLE IF NOT EXISTS vets (
-  id         INTEGER NOT NULL PRIMARY KEY,
-  first_name TEXT,
-  last_name  TEXT
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "accountSettings" (
+	"_id"	TEXT,
+	"booleanValue"	TEXT,
+	"sort"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
 );
-CREATE INDEX ON vets (last_name);
-
-CREATE TABLE IF NOT EXISTS specialties (
-  id   INTEGER NOT NULL PRIMARY KEY,
-  name TEXT
+CREATE TABLE IF NOT EXISTS "actions" (
+	"_id"	TEXT,
+	"username"	TEXT,
+	"actionType"	TEXT,
+	"boardId"	TEXT,
+	"swimlaneName"	TEXT,
+	"listName"	TEXT,
+	"listTitle"	TEXT,
+	"cardname"	TEXT,
+	"labelId"	TEXT,
+	"selectedColor"	TEXT,
+	"desc"	TEXT,
+	"emailSubject"	TEXT,
+	"emailTo"	TEXT,
+	"emailMsg"	TEXT,
+	"dateField"	TEXT,
+	"createdAt"	TEXT,
+	"updatedAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"?"	TEXT
 );
-CREATE INDEX ON specialties (name);
-
-CREATE TABLE IF NOT EXISTS vet_specialties (
-  vet_id       INT NOT NULL REFERENCES vets (id),
-  specialty_id INT NOT NULL REFERENCES specialties (id),
-  UNIQUE (vet_id, specialty_id)
+CREATE TABLE IF NOT EXISTS "activities" (
+	"_id"	TEXT,
+	"userId"	TEXT,
+	"username"	TEXT,
+	"memberId"	TEXT,
+	"type"	TEXT,
+	"activityTypeId"	TEXT,
+	"activityType"	TEXT,
+	"title"	TEXT,
+	"boardId"	TEXT,
+	"oldBoardId"	TEXT,
+	"boardName"	TEXT,
+	"oldBoardName"	TEXT,
+	"swimlaneId"	TEXT,
+	"oldSwimlaneId"	TEXT,
+	"swimlaneName"	TEXT,
+	"listId"	TEXT,
+	"oldListId"	TEXT,
+	"listName"	TEXT,
+	"cardId"	TEXT,
+	"cardTitle"	TEXT,
+	"customFieldId"	TEXT,
+	"value"	TEXT,
+	"checklistId"	TEXT,
+	"checklistName"	TEXT,
+	"checklistItemId"	TEXT,
+	"checklistItemName"	TEXT,
+	"subtaskId"	TEXT,
+	"attachmentId"	TEXT,
+	"attachmentName"	TEXT,
+	"labelId"	TEXT,
+	"timeKey"	TEXT,
+	"timeValue"	TEXT,
+	"timeOldValue"	TEXT,
+	"commentId"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
 );
-
-CREATE TABLE IF NOT EXISTS types (
-  id   INTEGER NOT NULL PRIMARY KEY,
-  name TEXT
+CREATE TABLE IF NOT EXISTS "announcements" (
+	"_id"	TEXT,
+	"enabled"	TEXT,
+	"title"	TEXT,
+	"body"	TEXT,
+	"sort"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
 );
-CREATE INDEX ON types (name);
-
-CREATE TABLE IF NOT EXISTS owners (
-  id         INTEGER NOT NULL PRIMARY KEY,
-  first_name TEXT,
-  last_name  TEXT,
-  address    TEXT,
-  city       TEXT,
-  telephone  TEXT
+CREATE TABLE IF NOT EXISTS "attachments" (
+	"_id"	TEXT,
+	"name"	TEXT,
+	"extension"	TEXT,
+	"ext"	TEXT,
+	"extensionWithDot"	TEXT,
+	"path"	TEXT,
+	"meta.boardId"	TEXT,
+	"meta.swimlaneId"	TEXT,
+	"meta.listId"	TEXT,
+	"meta.cardId"	TEXT,
+	"type"	TEXT,
+	"mime"	TEXT,
+	"mime-type"	TEXT,
+	"size"	TEXT,
+	"userId"	TEXT,
+	"versions"	TEXT,
+	"_downloadRoute"	TEXT,
+	"_collectionName"	TEXT,
+	"isVideo"	TEXT,
+	"isAudio"	TEXT,
+	"isImage"	TEXT,
+	"isText"	TEXT,
+	"isJSON"	TEXT,
+	"isPDF"	TEXT,
+	"_storagePath"	TEXT,
+	"public"	TEXT
 );
-CREATE INDEX ON owners (last_name);
-
-CREATE TABLE IF NOT EXISTS pets (
-  id         INTEGER NOT NULL PRIMARY KEY,
-  name       TEXT,
-  birth_date DATE,
-  type_id    INT NOT NULL REFERENCES types (id),
-  owner_id   INT REFERENCES owners (id)
+CREATE TABLE IF NOT EXISTS "attachments.files" (
+	"_id"	TEXT,
+	"filename"	TEXT,
+	"length"	TEXT,
+	"contentType"	TEXT,
+	"uploadDate"	TEXT,
+	"md5"	TEXT,
+	"metadata"	TEXT
 );
-CREATE INDEX ON pets (name);
-CREATE INDEX ON pets (owner_id);
-
-CREATE TABLE IF NOT EXISTS visits (
-  id          INTEGER NOT NULL PRIMARY KEY,
-  pet_id      INT REFERENCES pets (id),
-  visit_date  DATE,
-  description TEXT
+CREATE TABLE IF NOT EXISTS "avatars" (
+	"_id"	TEXT,
+	"name"	TEXT,
+	"extension"	TEXT,
+	"ext"	TEXT,
+	"extensionWithDot"	TEXT,
+	"path"	TEXT,
+	"meta"	TEXT,
+	"type"	TEXT,
+	"mime"	TEXT,
+	"mime-type"	TEXT,
+	"size"	TEXT,
+	"userId"	TEXT,
+	"versions"	TEXT,
+	"_downloadRoute"	TEXT,
+	"_collectionName"	TEXT,
+	"isVideo"	TEXT,
+	"isAudio"	TEXT,
+	"isImage"	TEXT,
+	"isText"	TEXT,
+	"isJSON"	TEXT,
+	"isPDF"	TEXT,
+	"_storagePath"	TEXT
 );
-CREATE INDEX ON visits (pet_id);
+CREATE TABLE IF NOT EXISTS "avatars.files" (
+	"_id"	TEXT,
+	"filename"	TEXT,
+	"length"	TEXT,
+	"contentType"	TEXT,
+	"uploadDate"	TEXT,
+	"md5"	TEXT,
+	"metadata"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "cfs.attachments.filerecord" (
+	"_id"	TEXT,
+	"original.type"	TEXT,
+	"original.size"	TEXT,
+	"original.updatedAt"	TEXT,
+	"original.name"	TEXT,
+	"copies"	TEXT,
+	"boardId"	TEXT,
+	"swimlaneId"	TEXT,
+	"listId"	TEXT,
+	"cardId"	TEXT,
+	"userId"	TEXT,
+	"uploadedAt"	TEXT,
+	"synchronizedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "cfs.avatars.filerecord" (
+	"_id"	TEXT,
+	"original.name"	TEXT,
+	"original.updatedAt"	TEXT,
+	"original.size"	TEXT,
+	"original.type"	TEXT,
+	"userId"	TEXT,
+	"uploadedAt"	TEXT,
+	"copies"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "cfs_gridfs.attachments.files" (
+	"_id"	TEXT,
+	"filename"	TEXT,
+	"contentType"	TEXT,
+	"lenght"	TEXT,
+	"chunkSize"	TEXT,
+	"uploadDate"	TEXT,
+	"aliases"	TEXT,
+	"metadata"	TEXT,
+	"md5"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "cfs_gridfs.avatars.files" (
+	"_id"	TEXT,
+	"filename"	TEXT,
+	"contentType"	TEXT,
+	"lenght"	TEXT,
+	"chunkSize"	TEXT,
+	"uploadDate"	TEXT,
+	"aliases"	TEXT,
+	"metadata"	TEXT,
+	"md5"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "boards" (
+	"_id"	TEXT,
+	"title"	TEXT,
+	"permission"	TEXT,
+	"sort"	TEXT,
+	"slug"	TEXT,
+	"stars"	TEXT,
+	"labels"	TEXT,
+	"members"	TEXT,
+	"color"	TEXT,
+	"orgs"	TEXT,
+	"teams"	TEXT,
+	"allowsCardCounterList"	TEXT,
+	"allowsBoardMemberList"	TEXT,
+	"subtasksDefaultBoardId"	TEXT,
+	"subtasksDefaultListId"	TEXT,
+	"dateSettingsDefaultBoardId"	TEXT,
+	"dateSettingsDefaultListId"	TEXT,
+	"allowsSubtasks"	TEXT,
+	"allowsAttachments"	TEXT,
+	"allowsChecklists"	TEXT,
+	"allowsComments"	TEXT,
+	"allowsDescriptionTitle"	TEXT,
+	"allowsDescriptionText"	TEXT,
+	"allowsDescriptionTextOnMinicard"	TEXT,
+	"allowsCardNumber"	TEXT,
+	"allowsActivities"	TEXT,
+	"allowsLabels"	TEXT,
+	"allowsCreator"	TEXT,
+	"allowsAssignee"	TEXT,
+	"allowsMembers"	TEXT,
+	"allowsRequestedBy"	TEXT,
+	"allowsCardSortingByNumber"	TEXT,
+	"allowsShowLists"	TEXT,
+	"allowsAssignedBy"	TEXT,
+	"allowsReceivedDate"	TEXT,
+	"allowsStartDate"	TEXT,
+	"allowsEndDate"	TEXT,
+	"allowsDueDate"	TEXT,
+	"presentParentTask"	TEXT,
+	"receivedAt"	TEXT,
+	"startAt"	TEXT,
+	"dueAt"	TEXT,
+	"endAt"	TEXT,
+	"spentTime"	TEXT,
+	"isOvertime"	TEXT,
+	"type"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"description"	TEXT,
+	"archived"	TEXT,
+	"archivedAt"	TEXT,
+	"watchers"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "cards" (
+	"_id"	TEXT,
+	"title"	TEXT,
+	"archived"	TEXT,
+	"archivedAt"	TEXT,
+	"parentId"	TEXT,
+	"listId"	TEXT,
+	"swimlaneId"	TEXT,
+	"boardId"	TEXT,
+	"coverId"	TEXT,
+	"color"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"customFields"	TEXT,
+	"dateLastActivity"	TEXT,
+	"description"	TEXT,
+	"requestedBy"	TEXT,
+	"assignedBy"	TEXT,
+	"labelIds"	TEXT,
+	"members"	TEXT,
+	"assignees"	TEXT,
+	"receivedAt"	TEXT,
+	"startAt"	TEXT,
+	"dueAt"	TEXT,
+	"endAt"	TEXT,
+	"spentTime"	TEXT,
+	"isOvertime"	TEXT,
+	"userId"	TEXT,
+	"sort"	TEXT,
+	"subtaskSort"	TEXT,
+	"type"	TEXT,
+	"linkedId"	TEXT,
+	"vote"	TEXT,
+	"poker"	TEXT,
+	"targetId_gantt"	TEXT,
+	"linkType_gantt"	TEXT,
+	"linkId_gantt"	TEXT,
+	"cardNumber"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "card_comments" (
+	"_id"	TEXT,
+	"userId"	TEXT,
+	"boardId"	TEXT,
+	"cardId"	TEXT,
+	"text"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "card_comment_reactions" (
+	"_id"	TEXT,
+	"boardId"	TEXT,
+	"cardCommentId"	TEXT,
+	"cardId"	TEXT,
+	"reactions"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "checklists" (
+	"_id"	TEXT,
+	"cardId"	TEXT,
+	"title"	TEXT,
+	"finishedAt"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"sort"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "checklistItems" (
+	"_id"	TEXT,
+	"title"	TEXT,
+	"sort"	TEXT,
+	"isFinished"	TEXT,
+	"checklistId"	TEXT,
+	"cardId"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"?"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "customFields" (
+	"_id"	TEXT,
+	"boardIds"	TEXT,
+	"name"	TEXT,
+	"type"	TEXT,
+	"settings"	TEXT,
+	"showOnCard"	TEXT,
+	"automaticallyOnCard"	TEXT,
+	"alwaysOnCard"	TEXT,
+	"showLabelOnMinicard"	TEXT,
+	"showSumAtTopOfList"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "impersonatedUsers" (
+	"_id"	TEXT,
+	"adminId"	TEXT,
+	"userId"	TEXT,
+	"boardId"	TEXT,
+	"attachmentId"	TEXT,
+	"reason"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "integrations" (
+	"_id"	TEXT,
+	"enabled"	TEXT,
+	"title"	TEXT,
+	"type"	TEXT,
+	"activities"	TEXT,
+	"url"	TEXT,
+	"token"	TEXT,
+	"boardId"	TEXT,
+	"userId"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "lists" (
+	"_id"	TEXT,
+	"title"	TEXT,
+	"starred"	TEXT,
+	"archived"	TEXT,
+	"archivedAt"	TEXT,
+	"boardId"	TEXT,
+	"swimlaneId"	TEXT,
+	"createdAt"	TEXT,
+	"sort"	TEXT,
+	"width"	TEXT,
+	"height"	TEXT,
+	"updatedAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"wipLimit"	TEXT,
+	"color"	TEXT,
+	"type"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "org" (
+	"_id"	TEXT,
+	"orgDisplayName"	TEXT,
+	"orgDesc"	TEXT,
+	"orgShortName"	TEXT,
+	"orgWebsite"	TEXT,
+	"orgIsActive"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "orgUser" (
+	"_id"	TEXT,
+	"orgId"	TEXT,
+	"userId"	TEXT,
+	"role"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "rules" (
+	"_id"	TEXT,
+	"title"	TEXT,
+	"triggerId"	TEXT,
+	"actionId"	TEXT,
+	"boardId"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "settings" (
+	"_id"	TEXT,
+	"disableRegistration"	TEXT,
+	"disableForgotPassword"	TEXT,
+	"mailServer.username"	TEXT,
+	"mailServer.passord"	TEXT,
+	"mailServer.host"	TEXT,
+	"mailServer.port"	TEXT,
+	"mailServer.enableTLS"	TEXT,
+	"mailServer.from"	TEXT,
+	"productName"	TEXT,
+	"displayAuthenticationMethod"	TEXT,
+	"defaultAuthenticationMethod"	TEXT,
+	"spinnerName"	TEXT,
+	"hideLogo"	TEXT,
+	"customLoginLogoImageUrl"	TEXT,
+	"customLoginLogoLinkUrl"	TEXT,
+	"customHelpLinkUrl"	TEXT,
+	"textBelowCustomLoginLogo"	TEXT,
+	"automaticLinkedUrlSchemes"	TEXT,
+	"customTopLeftCornerLogoImageUrl"	TEXT,
+	"customTopLeftCornerLogoLinkUrl"	TEXT,
+	"customTopLeftCornerLogoHeight"	TEXT,
+	"oidcBtnText"	TEXT,
+	"mailDomainName"	TEXT,
+	"legalNotice"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "swimlanes" (
+	"_id"	TEXT,
+	"title"	TEXT,
+	"archived"	TEXT,
+	"archivedAt"	TEXT,
+	"boardId"	TEXT,
+	"createdAt"	TEXT,
+	"sort"	TEXT,
+	"color"	TEXT,
+	"type"	TEXT,
+	"updatedAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "tableVisibilityModeSettings" (
+	"_id"	TEXT,
+	"booleanValue"	TEXT,
+	"sort"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT,
+	"?"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "team" (
+	"_id"	TEXT,
+	"teamDisplayName"	TEXT,
+	"teamDesc"	TEXT,
+	"teamShortName"	TEXT,
+	"teamWebsite"	TEXT,
+	"teamIsActive"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "triggers" (
+	"_id"	TEXT,
+	"userId"	TEXT,
+	"username"	TEXT,
+	"activityType"	TEXT,
+	"boardId"	TEXT,
+	"swimlaneName"	TEXT,
+	"oldListName"	TEXT,
+	"listName"	TEXT,
+	"cardTitle"	TEXT,
+	"desc"	TEXT,
+	"labelId"	TEXT,
+	"checklistName"	TEXT,
+	"checklistItemName"	TEXT,
+	"createdAt"	TEXT,
+	"updatedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "unsaved-edits" (
+	"_id"	TEXT,
+	"fieldName"	TEXT,
+	"docId"	TEXT,
+	"value"	TEXT,
+	"userId"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "sessiondata" (
+	"_id"	TEXT,
+	"sessionId"	TEXT,
+	"userId"	TEXT,
+	"totalHits"	TEXT,
+	"lastHit"	TEXT,
+	"resultsCount"	TEXT,
+	"cards"	TEXT,
+	"selector"	TEXT,
+	"projection"	TEXT,
+	"errors"	TEXT,
+	"debug"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "users" (
+	"_id"	TEXT,
+	"username"	TEXT,
+	"orgs"	TEXT,
+	"teams"	TEXT,
+	"services.password.bcrypt"	TEXT,
+	"services.email.verificationTokens"	TEXT,
+	"emails"	TEXT,
+	"profile.avatarUrl"	TEXT,
+	"profile.emailBuffer"	TEXT,
+	"profile.fullname"	TEXT,
+	"profile.showDesktopDragHandles"	TEXT,
+	"profile.hideCheckedItems"	TEXT,
+	"profile.cardMaximized"	TEXT,
+	"profile.customFieldsGrid"	TEXT,
+	"profile.hiddenSystemMessages"	TEXT,
+	"profile.hiddenMinicardLabelText"	TEXT,
+	"profile.initials"	TEXT,
+	"profile.invitedBoards"	TEXT,
+	"profile.language"	TEXT,
+	"profile.moveAndCopyDialog"	TEXT,
+	"profile.moveChecklistDialog"	TEXT,
+	"profile.copyChecklistDialog"	TEXT,
+	"profile.notifications"	TEXT,
+	"profile.rescueCardDescription"	TEXT,
+	"profile.showCardsCountAt"	TEXT,
+	"profile.startDayOfWeek"	TEXT,
+	"profile.starredBoards"	TEXT,
+	"profile.icode"	TEXT,
+	"profile.boardView"	TEXT,
+	"profile.listSortBy"	TEXT,
+	"profile.templatesBoardId"	TEXT,
+	"profile.cardTemplatesSwimlaneId"	TEXT,
+	"profile.listTemplatesSwimlaneId"	TEXT,
+	"profile.boardTemplatesSwimlaneId"	TEXT,
+	"heartbeat"	TEXT,
+	"isAdmin"	TEXT,
+	"createdThroughApi"	TEXT,
+	"loginDisabled"	TEXT,
+	"authenticationMethod"	TEXT,
+	"sessionData"	TEXT,
+	"sessionData.totalHits"	TEXT,
+	"importUsernames"	TEXT,
+	"createdAt"	TEXT,
+	"modifiedAt"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "esCounts" (
+	"_id"	TEXT,
+	"count"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "meteor_accounts_loginServiceConfiguration" (
+	"_id"	TEXT,
+	"service"	TEXT,
+	"idTokenWhitelistFields"	TEXT,
+	"loginStyle"	TEXT,
+	"clientId"	TEXT,
+	"secret"	TEXT,
+	"serverUrl"	TEXT,
+	"authorizationEndpoint"	TEXT,
+	"userinfoEndpoint"	TEXT,
+	"tokenEndpoint"	TEXT,
+	"requestPermissions"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "meteor-migrations" (
+	"_id"	TEXT,
+	"name"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "presences" (
+	"_id"	TEXT,
+	"serverId"	TEXT,
+	"ttl"	TEXT,
+	"clientAddress"	TEXT,
+	"status"	TEXT,
+	"connectedAt"	TEXT,
+	"lastSeen"	TEXT,
+	"state"	TEXT,
+	"userId"	TEXT
+);
+COMMIT;
