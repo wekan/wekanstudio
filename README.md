@@ -20,6 +20,10 @@ Web framework is based on:
 
 Native apps will be added for many CPU/OS. They will use APIs of above web framework.
 
+## Security
+
+See https://redbean.dev about DDoS protection, sandboxing, asan and other security features.
+
 ## Docs
 
 See at this `docs/starting.md` how to build `wekan.com` and run it. 
