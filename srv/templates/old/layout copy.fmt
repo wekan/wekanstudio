@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="packages/useraccounts_unstyled/lib/at_unstyled.css?hash=b997c15833dc71fc5ced9d9877cc6f2b98de7c5f">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-accounts-oidc/oidc_login_button.css?hash=2808e6ebae08fdf17c17388924f6b587c76f9412">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-bootstrap-datepicker/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css?hash=d4a000e07789c91c9fa4de38ff57dc42ff7ad420">
+  <link rel="stylesheet" type="text/css" href="packages/mquandalle_jquery-textcomplete/jquery-textcomplete/dist/jquery.textcomplete.css?hash=e56ce95fd45d91114a5ab61224f05c1b1f757d84">
+  <link rel="stylesheet" type="text/css" href="packages/templates_tabs/templates_tabs.css?hash=35dfbac1818fe212e133f567f4edac3b790a7880">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fullcalendar/fullcalendar/fullcalendar.css?hash=e348c58767a46e6a396c1ec878120b476c8e9a22">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/all.css?hash=933dc3def22e3fb6122e78caa04fd9ef7da1288b">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/brands.css?hash=1d5a7b7914b5fc3f3ac1bdaea7f416f7a9879b36">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/fontawesome.css?hash=c7bbc87521b20a2e21e7d90293b8a9beaeec0f89">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/regular.css?hash=d5c55ba990e69e6b707e7a5ece223a47cdcf0b07">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/solid.css?hash=4fa5f2963b58b6bff3e7ebcf1e69a097925def14">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/svg-with-js.css?hash=d4a9fa0ecd720515927a2ea1b90608806c385744">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/v4-font-face.css?hash=dfd99fe1a3da90d1ee1ec507de884768a6786abc">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/v4-shims.css?hash=06069287a84e54cfb01a41a0540f83f9ae40697d">
+  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/v5-font-face.css?hash=1daf99b286f05414c3df54b75017d47911f44b22">
+  <link rel="stylesheet" type="text/css" href="client/components/activities/activities.css?hash=5f72496ad94ff7ffe26370338f43e76f41a58f2f">
+  <link rel="stylesheet" type="text/css" href="client/components/activities/comments.css?hash=e47f06c829e17d3c6b8e0ef03c1f4319c5bc3305">
+  <link rel="stylesheet" type="text/css" href="client/components/boards/boardBody.css?hash=e00801f8cc0b5589c25e7bdd363a6a88ea1bdbac">
+  <link rel="stylesheet" type="text/css" href="client/components/boards/boardColors.css?hash=5d42b785dc0f4882b5eef28d968726e95af04148">
+  <link rel="stylesheet" type="text/css" href="client/components/boards/boardHeader.css?hash=12d3f7e05940695a77ba1d22cf954b1b6c4c1381">
+  <link rel="stylesheet" type="text/css" href="client/components/boards/boardsList.css?hash=5f1e4e7870ac2990c25c7e57119035cd2be16c75">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/attachments.css?hash=5dfb7c2d0b6cbac84b1d5bb26afc2106cf0c95e4">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/cardDate.css?hash=3b246d3051777fb774fe2fd9da276697f2d272c2">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/cardDescription.css?hash=e2b910c4eb3aee5609184b97be781f4cfaf2d067">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/cardDetails.css?hash=e3db3ec41daac2132c1532cecbac728fd588846d">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/cardTime.css?hash=f6138c610688285fa93d9f6abb6d9aeb180f6c18">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/checklists.css?hash=f220be10dd8ac7d0b1ddab2618334285ae1feca4">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/labels.css?hash=bb34945f63d68bf64c95e0aa98ec385262d39372">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/minicard.css?hash=2dc651a2afc3c081d5d9e2e8a6d234c8151d654b">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/resultCard.css?hash=269057113ca45fb92b69ecf76db6463d9b358ec6">
+  <link rel="stylesheet" type="text/css" href="client/components/cards/subtasks.css?hash=2178b052e00f0a2e60bca2026e628e57695ca7db">
+  <link rel="stylesheet" type="text/css" href="client/components/forms/datepicker.css?hash=e5aa1ec17f9fa831ec02e5a337d1e0d5a0fb3beb">
+  <link rel="stylesheet" type="text/css" href="client/components/forms/forms.css?hash=edbed44bef9a2f6efb65446d2d1f407b7f441565">
+  <link rel="stylesheet" type="text/css" href="client/components/import/import.css?hash=77024ff86fea9590900765966f45cd631d0fdb5f">
+  <link rel="stylesheet" type="text/css" href="client/components/lists/list.css?hash=adf1b62fdded70d1238627168800c40b9cc5b0bb">
+  <link rel="stylesheet" type="text/css" href="client/components/main/brokenCards.css?hash=16628f8d9c834d5b43b3e2027b367a69624d367e">
+  <link rel="stylesheet" type="text/css" href="client/components/main/dueCards.css?hash=f05b92974d4e75c063d1a1645f52377304aaf010">
+  <link rel="stylesheet" type="text/css" href="client/components/main/editor.css?hash=e5a229755a596a9137a1c00a1b4dfff8bf3c7aa3">
+  <link rel="stylesheet" type="text/css" href="client/components/main/fonts.css?hash=3ad7f36f40e1baf7a33535a162028aa42066fc83">
+  <link rel="stylesheet" type="text/css" href="client/components/main/globalSearch.css?hash=5167a4b796a87556b1c1362b0b73b2f57e1a243c">
+  <link rel="stylesheet" type="text/css" href="client/components/main/header.css?hash=6de8a7d8c1124596323e8aacf9f9fb87f553bf57">
+  <link rel="stylesheet" type="text/css" href="client/components/main/keyboardShortcuts.css?hash=fcba9f37eb74e65439953eee07ef2ea27906998b">
+  <link rel="stylesheet" type="text/css" href="client/components/main/layouts.css?hash=c23d81ee85728af51c7ccd7aac307cd2eca9761e">
+  <link rel="stylesheet" type="text/css" href="client/components/main/myCards.css?hash=c8c2493df39fc18dde360873b504890278c0ab3d">
+  <link rel="stylesheet" type="text/css" href="client/components/main/popup.css?hash=578dc4a708fd0f5b66dddd240499f13f5bc028d5">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_bounce.css?hash=efbf76804d2bf18ae26fb9aa2191bfa2fcbf94a7">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_cube.css?hash=b11b7a2bf9c24de1a4780b8799e7062e2f485961">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_cube_grid.css?hash=f7576e15c3cfacdd4821463a2dd76f56679aff14">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_dot.css?hash=7bf653acd2a6bbdd2c14cb189b392a4f849960a6">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_double_bounce.css?hash=75a58b428862208cc837c58e3822ce84a0121a69">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_rotateplane.css?hash=df35cbd194f988fe4fc649d931e73174996176e5">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_scaleout.css?hash=7b7ab204355a72c6061485a0457aee00d17074be">
+  <link rel="stylesheet" type="text/css" href="client/components/main/spinner_wave.css?hash=c118d6bd5a5803772f31b8f9fe48a0735c664d4c">
+  <link rel="stylesheet" type="text/css" href="client/components/notifications/notification.css?hash=a89cdca472128963c6f7b8f7f4c5d290ec1c4ca1">
+  <link rel="stylesheet" type="text/css" href="client/components/notifications/notifications.css?hash=9651fedefff946599160a2b209e9aee60d2a6601">
+  <link rel="stylesheet" type="text/css" href="client/components/notifications/notificationsDrawer.css?hash=6082f37a72a915baa46ce45012a370828591befa">
+  <link rel="stylesheet" type="text/css" href="client/components/rules/rules.css?hash=9684cd776d40306cd6b6d381872112f55876eba6">
+  <link rel="stylesheet" type="text/css" href="client/components/settings/attachments.css?hash=e2db8b194c7a341bb867115daefb88fe883bfe51">
+  <link rel="stylesheet" type="text/css" href="client/components/settings/peopleBody.css?hash=f660d093b1b8ef46a43224e39f27655da7349008">
+  <link rel="stylesheet" type="text/css" href="client/components/settings/settingBody.css?hash=e69ba57a3efb5a19dfddf17688209756c080d53d">
+  <link rel="stylesheet" type="text/css" href="client/components/settings/settingHeader.css?hash=21794dbe0e5aefa1f8171e97e654f58b644a81fd">
+  <link rel="stylesheet" type="text/css" href="client/components/settings/translationBody.css?hash=3d9ccda9e83580047743c1f4fdfcb98119a47d21">
+  <link rel="stylesheet" type="text/css" href="client/components/sidebar/sidebar.css?hash=67a6660577ef4660273ff1686e1bf08016b07712">
+  <link rel="stylesheet" type="text/css" href="client/components/sidebar/sidebarSearches.css?hash=a6602338b7526cbfed3bb5778bcf846307bc6b36">
+  <link rel="stylesheet" type="text/css" href="client/components/swimlanes/swimlanes.css?hash=6557496c84b892fcea91eea6387eae25dd45be8f">
+  <link rel="stylesheet" type="text/css" href="client/components/users/userAvatar.css?hash=1a0a9d7db248298750ddcd656a7594677ea6e13d">
+  <link rel="stylesheet" type="text/css" href="client/components/users/userForm.css?hash=b7fbc21a37c4d575610887be1eefdf144ccd8029">
+<title>WeKan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" crossOrigin="use-credentials" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="Wekan">
+<meta name="application-name" content="Wekan">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+    <div class="container-fluid">
+        <span class="navbar-brand">WeKan</span>
+        <!--<a class="navbar-brand" href="/"><span></span></a>-->
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navbar" style="">
+
+
+            <ul class="nav navbar-nav me-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link {% if active_menu=='home' then%}active{%end%}" href="/" title="home page">
+                        <span class="fa fa-home"></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if active_menu=='allboards' then%}active{%end%}" href="/allboards" title="allboards">
+                        <span class="fa fa-th-list"></span>
+                        <span>All Boards</span>
+                    </a>
+                </li>
+<!--
+                <li class="nav-item">
+                    <a class="nav-link {% if active_menu=='owners' then%}active{%end%}" href="/owners/find" title="find owners">
+                        <span class="fa fa-search"></span>
+                        <span>Find owners</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if active_menu=='vets' then%}active{%end%}" href="/vets" title="veterinarians">
+                        <span class="fa fa-th-list"></span>
+                        <span>Veterinarians</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {% if active_menu=='error' then%}active{%end%}" href="/oops" title="trigger a RuntimeException to see how it is handled">
+                        <span class="fa fa-exclamation-triangle"></span>
+                        <span>Error</span>
+                    </a>
+                </li>
+-->
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="container xd-container">
+     <body>
+        {% function block.content() %}
+        <img src="/images/favicon.ico" class="logo">
+        {% end %}
+        {% block.content() %}
+    </body>
+    </div>
+
+<br>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+          Fullmoon PetClinic - powered by Redbean
+          <img src="/images/powered.png" alt="" class="logo" style="width:32px">
+          </div>
+        </div>
+      </div>
+</div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

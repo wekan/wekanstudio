@@ -1,0 +1,15 @@
+wget https://boards.wekan.team/packages/useraccounts_unstyled/lib/at_unstyled.css
+wget https://boards.wekan.team/packages/wekan-accounts-oidc/oidc_login_button.css
+wget https://boards.wekan.team/packages/wekan-bootstrap-datepicker/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css
+wget https://boards.wekan.team/packages/mquandalle_jquery-textcomplete/jquery-textcomplete/dist/jquery.textcomplete.css
+wget https://boards.wekan.team/packages/templates_tabs/templates_tabs.css
+wget https://boards.wekan.team/packages/wekan-fullcalendar/fullcalendar/fullcalendar.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/all.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/brands.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/fontawesome.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/regular.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/solid.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/svg-with-js.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/v4-font-face.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/v4-shims.css
+wget https://boards.wekan.team/packages/wekan-fontawesome/fontawesome-free/css/v5-font-face.css

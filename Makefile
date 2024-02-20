@@ -73,7 +73,10 @@ log: ${PROJECT}.log
 	tail -f ${PROJECT}.log
 
 start: add ${REDBEAN}
-	./${REDBEAN} -s
+	./${REDBEAN}
+
+
+#silent: 	./${REDBEAN} -s
 
 # Verbose below. More silence above.
 
