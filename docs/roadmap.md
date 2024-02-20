@@ -1,12 +1,12 @@
 # Roadmap
 
-## Current Status
+## In Progress
 
 ### Pages
 
-- All Boards
+- All Boards: https://github.com/wekan/wekanbean/blob/main/CHANGELOG.md
 
-## Upcoming features
+## Upcoming Features
 
 ### Pages
 
@@ -32,6 +32,7 @@
 - No cookies.
 - No storing to browser localstorage.
 - Optional Javascript. Not required.
+- Unicode icons. Not Font Awesome.
 
 ### Scheduled actions
 
