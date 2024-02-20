@@ -7,7 +7,7 @@ This is general purpose web framework for creating any app, having features from
 - WeKan Open Source kanban https://wekan.github.io https://github.com/wekan/wekan/wiki/Deep-Dive-Into-WeKan
   - Same features, with changes to use minimal amount of code
   - Same API:
-    - https://wekan.github.io and 
+    - https://wekan.github.io/api/ 
     - https://github.com/wekan/wekan/blob/main/api.py
 - WeKan Multiverse prototypes https://github.com/wekan/wekan/wiki/WeKan-Multiverse-Roadmap
 - Database structure is same as in WeKan Open Source kanban https://wekan.github.io https://github.com/wekan/wekan (also features will be same and more),
