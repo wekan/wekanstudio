@@ -1,4 +1,4 @@
-# WeKanBean
+# WeKan Studio
 
 ## Description
 
@@ -34,14 +34,14 @@ If you know about any other technology, that can handle DDoS without CloudFlare,
 
 How to build and run `wekan.com`:
 
-https://github.com/wekan/wekanbean/blob/main/docs/starting.md
+https://github.com/wekan/wekanstudio/blob/main/docs/starting.md
 
-Also other Docs at https://github.com/wekan/wekanbean/tree/main/docs
+Also other Docs at https://github.com/wekan/wekanstudio/tree/main/docs
 
 ## Screenshot
 
-In WeKanBean, showing current visual look of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
+In WeKan Studio, showing current visual look of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
 
-More info about progress at https://github.com/wekan/wekanbean/blob/main/CHANGELOG.md
+More info about progress at https://github.com/wekan/wekanstudio/blob/main/CHANGELOG.md
 
 ![screenshot](screenshot.png)

@@ -4,7 +4,7 @@
 
 ### Pages
 
-- All Boards: https://github.com/wekan/wekanbean/blob/main/CHANGELOG.md
+- All Boards: https://github.com/wekan/wekanstudio/blob/main/CHANGELOG.md
 
 ## Upcoming Features
 

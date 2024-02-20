@@ -2,7 +2,7 @@
 
 ## Currently
 
-1. Add new database query to bottom of https://github.com/wekan/wekanbean/blob/main/srv/.lua/wekan.lua
+1. Add new database query to bottom of https://github.com/wekan/wekanstudio/blob/main/srv/.lua/wekan.lua
 
 ```
 local function allboardsList(r)
@@ -18,7 +18,7 @@ end
 fm.setRoute(fm.GET "/allboards", allboardsList)
 ```
 
-3. Add new page to top menu of https://github.com/wekan/wekanbean/blob/main/srv/templates/layout.fmt
+3. Add new page to top menu of https://github.com/wekan/wekanstudio/blob/main/srv/templates/layout.fmt
 
 ```
 <li class="nav-item">
@@ -29,9 +29,9 @@ fm.setRoute(fm.GET "/allboards", allboardsList)
 </li>
 ```
 
-4. Add page template, for example to https://github.com/wekan/wekanbean/blob/main/srv/templates/boards/allboardsList.fmt
+4. Add page template, for example to https://github.com/wekan/wekanstudio/blob/main/srv/templates/boards/allboardsList.fmt
 
-5. For additional features, see Redbean/Fullmoon/Petclinic links at https://github.com/wekan/wekanbean#description
+5. For additional features, see Redbean/Fullmoon/Petclinic links at https://github.com/wekan/wekanstudio#description
 
 ## Future
 
