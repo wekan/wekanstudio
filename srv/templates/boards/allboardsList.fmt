@@ -68,7 +68,7 @@
       </li>
 
   {% for _, board in ipairs(boards) do %}
-      <li class="tWyYpzNFCiRbt9W74 board-color-belize js-board ui-sortable-handle">
+      <li class="tWyYpzNFCiRbt9W74 board-color-{%= board.color%} js-board ui-sortable-handle">
         <a class="js-open-board board-list-item" href="/b/tWyYpzNFCiRbt9W74/auto">
           <span class="details">
             <span class="board-list-item-name" title="Järjestele taulu ikoneita vetämällä ja pudottamalla. Klikkaa taulu ikonia avataksesi taulun.">
