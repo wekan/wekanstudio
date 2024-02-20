@@ -5,6 +5,10 @@
 This is general purpose web framework for creating any app, having features from:
 
 - WeKan Open Source kanban https://wekan.github.io https://github.com/wekan/wekan/wiki/Deep-Dive-Into-WeKan
+  - Same features, with changes to use minimal amount of code
+  - Same API:
+    - https://wekan.github.io and 
+    - https://github.com/wekan/wekan/blob/main/api.py
 - WeKan Multiverse prototypes https://github.com/wekan/wekan/wiki/WeKan-Multiverse-Roadmap
 - Database structure is same as in WeKan Open Source kanban https://wekan.github.io https://github.com/wekan/wekan (also features will be same and more),
   when exported to SQLite with https://github.com/wekan/minio-metadata
@@ -18,7 +22,7 @@ Web framework is based on:
 - [Fullmoon](https://github.com/pkulchenko/fullmoon) Lua web framework, that is designed for Redbean webserver.
 - [Petclinic](https://github.com/xet7/pet) example, that was ported from Java to Fullmoon, and added code that makes possible to use same SQLite database from many CGI-like Lua processes.
 
-Native apps will be added for many CPU/OS. They will use APIs of above web framework.
+Native apps will be added for many CPU/OS. They will use same WeKan APIs, and native hardware features.
 
 ## Security
 
