@@ -7,19 +7,6 @@
   <link rel="stylesheet" type="text/css" href="packages/mquandalle_jquery-textcomplete/jquery-textcomplete/dist/jquery.textcomplete.css?hash=e56ce95fd45d91114a5ab61224f05c1b1f757d84">
   <link rel="stylesheet" type="text/css" href="packages/templates_tabs/templates_tabs.css?hash=35dfbac1818fe212e133f567f4edac3b790a7880">
   <link rel="stylesheet" type="text/css" href="packages/wekan-fullcalendar/fullcalendar/fullcalendar.css?hash=e348c58767a46e6a396c1ec878120b476c8e9a22">
-
-<!--
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/all.css?hash=933dc3def22e3fb6122e78caa04fd9ef7da1288b">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/brands.css?hash=1d5a7b7914b5fc3f3ac1bdaea7f416f7a9879b36">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/fontawesome.css?hash=c7bbc87521b20a2e21e7d90293b8a9beaeec0f89">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/regular.css?hash=d5c55ba990e69e6b707e7a5ece223a47cdcf0b07">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/solid.css?hash=4fa5f2963b58b6bff3e7ebcf1e69a097925def14">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/svg-with-js.css?hash=d4a9fa0ecd720515927a2ea1b90608806c385744">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/v4-font-face.css?hash=dfd99fe1a3da90d1ee1ec507de884768a6786abc">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/v4-shims.css?hash=06069287a84e54cfb01a41a0540f83f9ae40697d">
-  <link rel="stylesheet" type="text/css" href="packages/wekan-fontawesome/fontawesome-free/css/v5-font-face.css?hash=1daf99b286f05414c3df54b75017d47911f44b22">
--->
-
   <link rel="stylesheet" type="text/css" href="client/components/activities/activities.css?hash=5f72496ad94ff7ffe26370338f43e76f41a58f2f">
   <link rel="stylesheet" type="text/css" href="client/components/activities/comments.css?hash=e47f06c829e17d3c6b8e0ef03c1f4319c5bc3305">
   <link rel="stylesheet" type="text/css" href="client/components/boards/boardBody.css?hash=e00801f8cc0b5589c25e7bdd363a6a88ea1bdbac">

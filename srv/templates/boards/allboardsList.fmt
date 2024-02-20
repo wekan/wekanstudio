@@ -57,6 +57,13 @@
       <li class="AllBoardBtns"><div class="AllBoardButtonsContainer"></div></li>
     </ul>
 
+    <form action="/allboards" method="post">
+
+    Selected boards: 
+    <button class="js-star-board" title="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi." aria-label="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi.">⭐ Star</button>
+    <button class="js-clone-board" title="Tee kaksoiskappale taulusta" aria-label="Tee kaksoiskappale taulusta">⎘ Duplicate</button>
+    <button class="js-archive-board" title="Siirrä taulu Arkistoon" aria-label="Siirrä taulu Arkistoon">🗑 Move to Archive</button>
+
     <ul class="board-list clearfix js-boards ui-sortable">
       <li class="js-add-board js-board">
         <a class="board-list-item label" title="Lisää taulu" href="#" aria-label="Lisää taulu">Lisää taulu</a>
@@ -64,19 +71,26 @@
 
   {% for _, board in ipairs(boards) do %}
       <li class="tWyYpzNFCiRbt9W74 board-color-belize js-board ui-sortable-handle">
-        <a class="js-open-board board-list-item" href="/b/tWyYpzNFCiRbt9W74/auto">
           <span class="details">
-            <span class="board-list-item-name" title="Järjestele taulu ikoneita vetämällä ja pudottamalla. Klikkaa taulu ikonia avataksesi taulun.">
-              <div class="viewer" dir="auto"><p>{%= board.title%}</p></div>
-            </span>
-            <i class="js-star-board" title="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi." aria-label="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi.">⭐</i>
-            <p class="board-list-item-desc"><div class="viewer" dir="auto"><p>{%= board.description%}</p></div></p>
-            <i class="js-clone-board" title="Tee kaksoiskappale taulusta" aria-label="Tee kaksoiskappale taulusta">⎘</i>
-            <i class="js-archive-board" title="Siirrä taulu Arkistoon" aria-label="Siirrä taulu Arkistoon">🗑</i>
-          </span>
-        </a>
+            <a class="js-open-board board-list-item" href="/b/tWyYpzNFCiRbt9W74/auto">
+              <span class="board-list-item-name" title="Järjestele taulu ikoneita vetämällä ja pudottamalla. Klikkaa taulu ikonia avataksesi taulun.">
+                <div class="viewer" dir="auto"><p>{%= board.title%}</p></div>
+              </span>
+              <p class="board-list-item-desc">
+                <div class="viewer" dir="auto">
+                  <p>{%= board.description%}</p>
+                </div>
+              </p>
+            </a>
+            <div class="materialCheckBox">
+              <input type="checkbox" id="{%= board._id%}" name="select-{%= board._id%}" value="">
+            </div>
+        </span>
       </li>
 
   {% end %}
 {% end %}
+
+</form>
+
 {% render('layout',  {active_menu='allboards'}) %}
