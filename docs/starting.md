@@ -10,14 +10,23 @@
 ```
 make start
 ```
-This will create wekan.com executeable, that same executeable works at Windows/Mac/Linux/BSD x86_64/arm64,
-using cross-platform tech from https://github.com/jart/cosmopolitan . There is no need for separate executeable for each CPU/OS.
 
-For s390x, RISC-V etc, you can compile and run with blink https://github.com/jart/blink , like `blink wekan.com`.
+Makefile:
+- Downloads nightly build of Redbean. If you like to compile Redbean yourself, see build info at https://redbean.dev and source code at https://github.com/jart/cosmopolitan
+- Adds all files from `srv` directory to .zip file, that is added to end of `redbean.com` executeable, producing one final `wekan.com` executeable
+- That same `wekan.com` executeable works at Windows/Mac/Linux/BSD x86_64/arm64, using cross-platform tech from https://github.com/jart/cosmopolitan . There is no need for separate executeable for each CPU/OS.
+- When started, if SQLite3 database `wekan.db` does not exist at same directory as `wekan.com`, it will be created.
+- For s390x, RISC-V etc, you can compile and run with blink https://github.com/jart/blink , like `blink wekan.com`.
 
-Port defaults to 8000 and is sepecified at the bottom of petclinic.lua file
+Port defaults to 8000 and is sepecified at the bottom of file https://github.com/wekan/wekanbean/blob/main/srv/.lua/wekan.lua
 
 Open http://localhost:8000
+
+### Distributing
+
+- It is only needed to distribute `wekan.com` executeable that was created with above command `make start`
+- When started, if SQLite3 database `wekan.db` does not exist at same directory as `wekan.com`, it will be created.
+- If you would like to have some obfuscation for your code, you can use `luac` to compile your `.lua` files to bytecode. See examples at demo of https://redbean.dev
 
 ### Start as a background process
 ```
