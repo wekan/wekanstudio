@@ -31,7 +31,11 @@
 - HTML/CSS, compatible with all web browsers
 - No cookies.
 - No storing to browser localstorage.
-- Optional Javascript. Not required.
+- Optional Javascript. Not required. If needed, try:
+  - Existing WeKan Javascript code, like JQuery draggable/sortable
+  - RaphaelJS, that also works SVG and VML also with legacy browsers like IE https://github.com/wekan/wekan/issues/3392#issuecomment-1296475023 , https://github.com/raphaeljsorg
+  - https://unpoly.com , better for progressive enhancement with less code changes, recommended by HTMX creator https://www.youtube.com/watch?v=9H5VK9vJ-aw 
+  - https://leanrada.com/htmz/ , https://news.ycombinator.com/item?id=39429370
 - Unicode icons. Not Font Awesome.
 
 ### Scheduled actions
