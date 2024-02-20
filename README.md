@@ -32,6 +32,8 @@ How to build and run `wekan.com`:
 
 https://github.com/wekan/wekanbean/blob/main/docs/starting.md
 
+Also other Docs at https://github.com/wekan/wekanbean/tree/main/docs
+
 ## Screenshot
 
 In WeKanBean, showing current visual look of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
