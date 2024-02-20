@@ -34,6 +34,8 @@ https://github.com/wekan/wekanbean/blob/main/docs/starting.md
 
 ## Screenshot
 
-Showing table view of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
+In WeKanBean, showing current visual look of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
+
+More info about progress at https://github.com/wekan/wekanbean/blob/main/CHANGELOG.md
 
 ![screenshot](screenshot.png)
