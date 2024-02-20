@@ -4,7 +4,7 @@
   <div id="headerIsSettingDatabaseCallDone" style="display: block;">
     <img src="images/logo-header.png" alt="WeKan ®" title="WeKan ®">
   </div>
-  <span class="allBoards"><a href="/"><span class="fa fa-home"></span>Kaikki taulut</a></span>
+  <span class="allBoards"><a href="/"><span class="fa fa-home"></span>🏠 Kaikki taulut</a></span>
 
   <ul class="header-quick-access-list">
     <li>
@@ -19,15 +19,13 @@
     </li>
   </ul>
   <a class="js-toggle-desktop-drag-handles" title="Näytä työpöydän vedon kahvat" alt="Näytä työpöydän vedon kahvat" href="#" aria-label="Näytä työpöydän vedon kahvat">
-    <i class="fa fa-arrows">
-      <i class="fa fa-ban"></i>
-    </i>
+    ↔↕⏹
   </a>
 
   <div id="header-new-board-icon"></div>
 
   <div id="notifications" class="board-header-btns right">
-    <a class="notifications-drawer-toggle fa fa-bell" title="Ilmoitukset" href="#" aria-label="Ilmoitukset"></a>
+    <a class="notifications-drawer-toggle" title="Ilmoitukset" href="#" aria-label="Ilmoitukset">🔔</a>
   </div>
 
   <div id="header-user-bar">
@@ -71,10 +69,10 @@
             <span class="board-list-item-name" title="Järjestele taulu ikoneita vetämällä ja pudottamalla. Klikkaa taulu ikonia avataksesi taulun.">
               <div class="viewer" dir="auto"><p>{%= board.title%}</p></div>
             </span>
-            <i class="fa js-star-board fa-star-o" title="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi." aria-label="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi."></i>
+            <i class="js-star-board" title="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi." aria-label="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi.">⭐</i>
             <p class="board-list-item-desc"><div class="viewer" dir="auto"><p>{%= board.description%}</p></div></p>
-            <i class="fa js-clone-board fa-clone" title="Tee kaksoiskappale taulusta" aria-label="Tee kaksoiskappale taulusta"></i>
-            <i class="fa js-archive-board fa-archive" title="Siirrä taulu Arkistoon" aria-label="Siirrä taulu Arkistoon"></i>
+            <i class="js-clone-board" title="Tee kaksoiskappale taulusta" aria-label="Tee kaksoiskappale taulusta">⎘</i>
+            <i class="js-archive-board" title="Siirrä taulu Arkistoon" aria-label="Siirrä taulu Arkistoon">🗑</i>
           </span>
         </a>
       </li>
