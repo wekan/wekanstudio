@@ -4,7 +4,7 @@
 
 TL;DR
 
-- Redbean, that is BLWRSL (Blow Resilient) (BSD/Linux/Mac/Windows / Redbean / SQLite / Lua). Similar like LAMP (Linux/Apache/MySQL/PHP).
+- BLWRSL (Blow Resilient) (BSD/Linux/Mac/Windows / Redbean / SQLite / Lua). Similar like LAMP (Linux/Apache/MySQL/PHP).
 - One executeable: Redbean/Lua/SQLite + .zip file at end of same executeable. Like Go, but same executeable works at Windows/Mac/Linux/BSD, no need for separate exe per OS/CPU.
 - SSR (Server Side Rendering). Like Web 1.0, with HTML/CSS at frontend using HTML Forms with POST/GET. Redbean at backend. Similar like LAMP.
 - Tested with all browsers, works also without Javascript:
