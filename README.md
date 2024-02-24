@@ -8,11 +8,11 @@ TL;DR
 - One executeable: Redbean/Lua/SQLite + .zip file at end of same executeable. Like Go, but same executeable works at Windows/Mac/Linux/BSD, no need for separate exe per OS/CPU.
 - SSR (Server Side Rendering). Like Web 1.0, with HTML/CSS at frontend using HTML Forms with POST/GET. Redbean at backend. Similar like LAMP.
 - Tested with all browsers, works also without Javascript:
-  - Without Javascript: Lynx, Links, FreeDOS Dillo
-  - Limited Javascript: Netsurf, Amiga IBrowse
-  - Legacy browsers: Netscape, IE
-  - Modern browsers: Chromium, Firefox, Safari
+  - Modern browsers based on: Chromium, Firefox, Safari
   - Upcoming browsers: Ladybird
+  - Limited Javascript: Netsurf, Amiga IBrowse
+  - Without Javascript: Lynx, Links, FreeDOS Dillo
+  - Legacy browsers: Netscape, IE
 - If browser has Javascript support, Javascript code can use https://unpoly.com for additional effects.
 - No cookies. No localstorage. Sessions stored to serverside database, based on browser properties. More info at https://github.com/wekan/wekanstudio/blob/main/docs/roadmap.md#sessions
 
