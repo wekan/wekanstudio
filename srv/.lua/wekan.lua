@@ -212,6 +212,19 @@ local function allboardsList(r)
   return fm.serveContent("boards/allboardsList", {boards = boards})
 end
 
+local function signIn(r)
+  return fm.serveContent("sign-in", {})
+end
+
+local function signUp(r)
+  return fm.serveContent("sign-up", {})
+end
+
+local function forgotPassword(r)
+  return fm.serveContent("forgot-password", {})
+end
+
+
 fm.setRoute("/owners/new", newOwner)
 fm.setRoute(fm.GET "/owners/find", findOwners)
 fm.setRoute(fm.GET "/owners/:id[%d]", showOwner)
@@ -221,6 +234,9 @@ fm.setRoute("/owners/:id[%d]/pets/:pet_id[%d]/edit", editPet)
 fm.setRoute("/owners/:id[%d]/pets/:pet_id[%d]/visits/new", newVisit)
 fm.setRoute(fm.GET "/vets", vetList)
 fm.setRoute(fm.GET "/allboards", allboardsList)
+fm.setRoute(fm.GET "/sign-in", signIn)
+fm.setRoute(fm.GET "/sign-up", signUp)
+fm.setRoute(fm.GET "/forgot-password", forgotPassword)
 fm.setRoute(fm.GET "/", welcome)
 fm.setRoute(fm.GET "/oops", showError)
 

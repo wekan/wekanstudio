@@ -2,6 +2,21 @@
 
 ## Description
 
+TL;DR
+
+- Redbean, that is WMLBRSL (Windows/Mac/Linux/BSD / Redbean / SQLite / Lua). Similar like LAMP (Linux/Apache/MySQL/PHP).
+- One executeable: Redbean/Lua/SQLite + .zip file at end of same executeable. Like Go, but same executeable works at Windows/Mac/Linux/BSD, no need for separate exe per OS/CPU.
+- SSR (Server Side Rendering). Like Web 1.0, with HTML/CSS at frontend using HTML Forms with POST/GET. Redbean at backend. Similar like LAMP.
+- Tested with all browsers, works also without Javascript:
+  - Without Javascript: Lynx, Links, FreeDOS Dillo
+  - Limited Javascript: Netsurf, Amiga IBrowse
+  - Legacy browsers: Netscape, IE
+  - Modern browsers: Chromium, Firefox, Safari
+  - Upcoming browsers: Ladybird
+- If browser has Javascript support, Javascript code can use https://unpoly.com for additional effects.
+
+## General purpose web framework
+
 This is general purpose web framework for creating any app, having features from:
 
 - WeKan Open Source kanban https://wekan.github.io https://github.com/wekan/wekan/wiki/Deep-Dive-Into-WeKan
