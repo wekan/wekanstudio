@@ -14,6 +14,7 @@ TL;DR
   - Modern browsers: Chromium, Firefox, Safari
   - Upcoming browsers: Ladybird
 - If browser has Javascript support, Javascript code can use https://unpoly.com for additional effects.
+- No cookies. No localstorage. Sessions stored to serverside database, based on browser properties. More info at https://github.com/wekan/wekanstudio/blob/main/docs/roadmap.md#sessions
 
 ## General purpose web framework
 
