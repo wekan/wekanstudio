@@ -16,7 +16,13 @@ TL;DR
 - If browser has Javascript support, Javascript code can use https://unpoly.com for additional effects.
 - No cookies. No localstorage. Sessions stored to serverside database, based on browser properties. More info at https://github.com/wekan/wekanstudio/blob/main/docs/roadmap.md#sessions
 
-## General purpose web framework
+## Cross-platform distro Cosmos
+
+Related to Redbean:
+
+https://justine.lol/cosmo3/
+
+## WeKan Studio: General purpose web framework
 
 This is general purpose web framework for creating any app, having features from:
 
