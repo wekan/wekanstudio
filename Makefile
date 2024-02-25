@@ -21,7 +21,12 @@ REDBEAN_VERSION=2.2
 # There's no ASAN for ARM64 yet.
 # This download URL works for M1. Later will be newer than 2.2 release of redbean to official URLs,
 # then will also work official version URLs.
-REDBEAN_DL=https://cosmo.zip/pub/cosmos/bin/redbean
+#REDBEAN_DL=https://cosmo.zip/pub/cosmos/bin/redbean
+#- ---------
+# Download correctly to antivirus reported validated executeable
+# https://github.com/jart/cosmopolitan/issues/1114
+REDBEAN_DL=https://github.com/jart/cosmopolitan/files/14394869/redbean-38bcea.zip
+REDBEAN_FILE=redbean-38bcea
 
 SQLITE3=sqlite3.com
 SQLITE3_DL=https://redbean.dev/sqlite3.com
@@ -40,7 +45,9 @@ download: ${REDBEAN} ${SQLITE3} ${UNZIP} ${DEFINITIONS}
 
 ${REDBEAN}.template:
 	curl -s ${REDBEAN_DL} -o $@ -z $@ && \
-		chmod +x $@
+	unzip $@ && \
+	mv ${REDBEAN_FILE} $@ && \
+	chmod +x $@
 
 ${REDBEAN}: ${REDBEAN}.template
 	cp ${REDBEAN}.template ${REDBEAN}
