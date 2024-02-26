@@ -7,7 +7,8 @@
 .PHONY: all clean test log ls log start start-daemon restart-daemon stop-daemon
 
 # Change redbean to whatever you want
-PROJECT=wekan
+FINALFILE=wekan.com
+PROJECT=redbean
 REDBEAN=${PROJECT}.com
 REDBEAN_VERSION=2.2
 # leave empty for default, or use one of tiny-, asan-, original-, static-, unsecure-, original-tinylinux-
@@ -21,12 +22,13 @@ REDBEAN_VERSION=2.2
 # There's no ASAN for ARM64 yet.
 # This download URL works for M1. Later will be newer than 2.2 release of redbean to official URLs,
 # then will also work official version URLs.
-#REDBEAN_DL=https://cosmo.zip/pub/cosmos/bin/redbean
+REDBEAN_DL=https://cosmo.zip/pub/cosmos/bin/redbean
 #- ---------
-# Download correctly to antivirus reported validated executeable
+# Download correctly to antivirus reported validated executeable.
+# Downloading and extracting did not work anymore at 2024-02-26.
 # https://github.com/jart/cosmopolitan/issues/1114
-REDBEAN_DL=https://github.com/jart/cosmopolitan/files/14394869/redbean-38bcea.zip
-REDBEAN_FILE=redbean-38bcea
+#REDBEAN_DL=https://github.com/jart/cosmopolitan/files/14394869/redbean-38bcea.zip
+#REDBEAN_FILE=redbean-38bcea
 
 SQLITE3=sqlite3.com
 SQLITE3_DL=https://redbean.dev/sqlite3.com
@@ -45,9 +47,12 @@ download: ${REDBEAN} ${SQLITE3} ${UNZIP} ${DEFINITIONS}
 
 ${REDBEAN}.template:
 	curl -s ${REDBEAN_DL} -o $@ -z $@ && \
-	unzip $@ && \
-	mv ${REDBEAN_FILE} $@ && \
 	chmod +x $@
+	# OLD: Anvivirus validated redbean at .zip file:
+	#curl -s ${REDBEAN_DL} -o $@ -z $@ && \
+	#unzip $@ && \
+	#mv ${REDBEAN_FILE} $@ && \
+	#chmod +x $@
 
 ${REDBEAN}: ${REDBEAN}.template
 	cp ${REDBEAN}.template ${REDBEAN}
@@ -80,27 +85,26 @@ log: ${PROJECT}.log
 	tail -f ${PROJECT}.log
 
 start: add ${REDBEAN}
-	./${REDBEAN}
-
-
-#silent: 	./${REDBEAN} -s
+	mv ${REDBEAN} ${FINALFILE} && \
+	./${FINALFILE} -s
 
 # Verbose below. More silence above.
 
 startdev: add ${REDBEAN}
-	./${REDBEAN} -vv
+	mv ${REDBEAN} ${FINALFILE} && \
+	./${FINALFILE} -vv
 
 start-daemon: ${REDBEAN}
 	@(test ! -f ${PROJECT}.pid && \
 		./${REDBEAN} -vv -d -L ${PROJECT}.log -P ${PROJECT}.pid && \
 		printf "started $$(cat ${PROJECT}.pid)\n") \
 		|| echo "already running $$(cat ${PROJECT}.pid)"
-    
+
 start-daemon-silent: ${REDBEAN}
 	@(test ! -f ${PROJECT}.pid && \
 		./${REDBEAN} -s -d -P ${PROJECT}.pid && \
 		printf "started $$(cat ${PROJECT}.pid)\n") \
-		|| echo "already running $$(cat ${PROJECT}.pid)"    
+		|| echo "already running $$(cat ${PROJECT}.pid)"
 
 restart-daemon:
 	@(test ! -f ${PROJECT}.pid && \
@@ -113,7 +117,7 @@ stop-daemon: ${PROJECT}.pid
 	@kill -TERM $$(cat ${PROJECT}.pid) && \
 		printf "stopped $$(cat ${PROJECT}.pid)\n" && \
 		rm ${PROJECT}.pid \
-    
+
 benchmark:
 	wrk -H 'Accept-Encoding: gzip' -t 12 -c 120 http://127.0.0.1:8000/
 
