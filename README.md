@@ -18,7 +18,7 @@ make start
 
 ## Stopping
 
-2 times keyboard keysb `Ctrl` and `c`:
+2 times keyboard keys `Ctrl` and `c`:
 
 ```
 Ctrl-c Ctrl-c
