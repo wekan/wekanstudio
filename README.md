@@ -38,16 +38,14 @@ Ctrl-c Ctrl-c
     - SQLite https://sqlite.org https://github.com/jart/cosmopolitan/blob/master/tool/net/lsqlite3.c
   - 50%: `srv` directory zip archive added to end of above C89 executeable, to make one executeable
     - `srv/.init.lua` load wekan.lua
-```
-srv/.lua/
-  ├── wekan.lua
-  ├── schema.sql: SQLite database schema like `CREATE TABLE`
-  ├── data.sql: Optionally data with `INSERT INTO`
-  ├── fullmoon.lua: Fullmoon web framework https://github.com/pkulchenko/fullmoon
-  ├── dblib.lua: Database library 
-  ├── formlib.lua: Form library
-  └── util.lua: Utilities
-```
+    - `srv/.lua/`
+      - `wekan.lua`
+      - `schema.sql`: SQLite database schema like `CREATE TABLE`
+      - `data.sql`: Optionally data with `INSERT INTO`
+      - `fullmoon.lua`: Fullmoon web framework https://github.com/pkulchenko/fullmoon
+      - `dblib.lua`: Database library 
+      - `formlib.lua`: Form library
+      - `util.lua`: Utilities
 
 ## 2) Database file: wekan.db
 
