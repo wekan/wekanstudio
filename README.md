@@ -6,6 +6,24 @@
 - BLWRSL (Blow Resilient) (BSD/Linux/Mac/Windows / Redbean / SQLite / Lua). Similar like LAMP (Linux/Apache/MySQL/PHP).
 - One executeable: Redbean/Lua/SQLite + .zip file at end of same executeable. Like Go, but same executeable works at Windows/Mac/Linux/BSD, no need for separate exe per OS/CPU.
 
+## Starting
+
+```
+git clone https://github.com/wekan/wekanstudio
+
+cd wekanstudio
+
+make start
+```
+
+## Stopping
+
+2 times keyboard keysb `Ctrl` and `c`:
+
+```
+Ctrl-c Ctrl-c
+```
+
 ## 1) Executeable file: wekan.com
 
 - 100%: wekan.com one server executeable
