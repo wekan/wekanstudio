@@ -37,15 +37,17 @@ Ctrl-c Ctrl-c
     - Lua interpreter https://en.wikipedia.org/wiki/Lua_(programming_language)
     - SQLite https://sqlite.org https://github.com/jart/cosmopolitan/blob/master/tool/net/lsqlite3.c
   - 50%: `srv` directory zip archive added to end of above C89 executeable, to make one executeable
-    - `srv/.init.lua` load wekan.lua
+    - `srv/.init.lua` load wekan.lua, starting port
     - `srv/.lua/`
-      - `wekan.lua`
+      - `wekan.lua`: Functions for Templates, Router, Database name `wekan.db`, 
       - `schema.sql`: SQLite database schema like `CREATE TABLE`
       - `data.sql`: Optionally data with `INSERT INTO`
       - `fullmoon.lua`: Fullmoon web framework https://github.com/pkulchenko/fullmoon
       - `dblib.lua`: Database library 
       - `formlib.lua`: Form library
       - `util.lua`: Utilities
+    - `srv/templates`: Backend templates with HTML/CSS/Lua
+    - `srv/assets/` Frontend static HTML/CSS/JS
 
 ## 2) Database file: wekan.db
 
@@ -53,7 +55,6 @@ Ctrl-c Ctrl-c
 
 ## Frontend: HTML/CSS/JS from directory srv
 
-- `srv/assets/` for frontend static HTML/CSS/JS
 - Tested with all browsers, works also without Javascript:
   - Modern browsers based on: Chromium, Firefox, Safari
   - Upcoming browsers: Ladybird
@@ -66,8 +67,6 @@ Ctrl-c Ctrl-c
 ## Backend: Lua/SQLite
 
 - SSR (Server Side Rendering). Like Web 1.0, with HTML/CSS at frontend using HTML Forms with POST/GET. Redbean at backend. Similar like LAMP.
-- `srv/templates`: Webpage templates with HTML/CSS/Lua
-- `srv/.lua`: Fullmoon web framework
 
 ## Cross-platform distro Cosmos
 
