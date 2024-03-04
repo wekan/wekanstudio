@@ -1,12 +1,43 @@
 # WeKan Studio
 
-## Description
 
-TL;DR
+## TL;DR
 
 - BLWRSL (Blow Resilient) (BSD/Linux/Mac/Windows / Redbean / SQLite / Lua). Similar like LAMP (Linux/Apache/MySQL/PHP).
 - One executeable: Redbean/Lua/SQLite + .zip file at end of same executeable. Like Go, but same executeable works at Windows/Mac/Linux/BSD, no need for separate exe per OS/CPU.
-- SSR (Server Side Rendering). Like Web 1.0, with HTML/CSS at frontend using HTML Forms with POST/GET. Redbean at backend. Similar like LAMP.
+
+## 1) Executeable file: wekan.com
+
+- 100%: wekan.com one server executeable
+  - 50%: C89 executeable
+    - Cosmopolitan Cross-Platform https://github.com/jart/cosmopolitan
+      - BSD/Linux/Mac/Windows x86_64/s390x
+      - blink x86_64 emulator: `blink wekan.com`
+        - s390x/RISC-V: `git clone https://github.com/cosmopolitan/blink && cd blink && ./configure && make -j$(nproc) && ./blink wekan.com`
+        - Android Termux from Play Store or F-Droid: `pkg install blink && blink wekan.com`
+    - Redbean webserver https://redbean.dev https://github.com/jart/cosmopolitan/blob/master/tool/net/redbean.c
+    - Lua interpreter https://en.wikipedia.org/wiki/Lua_(programming_language)
+    - SQLite https://sqlite.org https://github.com/jart/cosmopolitan/blob/master/tool/net/lsqlite3.c
+  - 50%: `srv` directory zip archive added to end of above C89 executeable, to make one executeable
+    - `srv/.init.lua` load wekan.lua
+```
+srv/.lua/
+  ├── wekan.lua
+  ├── schema.sql: SQLite database schema like `CREATE TABLE`
+  ├── data.sql: Optionally data with `INSERT INTO`
+  ├── fullmoon.lua: Fullmoon web framework https://github.com/pkulchenko/fullmoon
+  ├── dblib.lua: Database library 
+  ├── formlib.lua: Form library
+  └── util.lua: Utilities
+```
+
+## 2) Database file: wekan.db
+
+- SQLite database. It will be created to same directory where `wekan.com` is, if it does not already exist.
+
+## Frontend: HTML/CSS/JS from directory srv
+
+- `srv/assets/` for frontend static HTML/CSS/JS
 - Tested with all browsers, works also without Javascript:
   - Modern browsers based on: Chromium, Firefox, Safari
   - Upcoming browsers: Ladybird
@@ -15,6 +46,12 @@ TL;DR
   - Legacy browsers: Netscape, IE
 - If browser has Javascript support, Javascript code can use https://unpoly.com for additional effects.
 - No cookies. No localstorage. Sessions stored to serverside database, based on browser properties. More info at https://github.com/wekan/wekanstudio/blob/main/docs/roadmap.md#sessions
+
+## Backend: Lua/SQLite
+
+- SSR (Server Side Rendering). Like Web 1.0, with HTML/CSS at frontend using HTML Forms with POST/GET. Redbean at backend. Similar like LAMP.
+- `srv/templates`: Webpage templates with HTML/CSS/Lua
+- `srv/.lua`: Fullmoon web framework
 
 ## Cross-platform distro Cosmos
 
