@@ -53,7 +53,7 @@ Ctrl-c Ctrl-c
 
 - SQLite database. It will be created to same directory where `wekan.com` is, if it does not already exist.
 
-## Frontend: HTML/CSS/JS from directory srv
+## Web browsers
 
 - Tested with all browsers, works also without Javascript:
   - Modern browsers based on: Chromium, Firefox, Safari
