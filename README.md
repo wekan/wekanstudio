@@ -70,9 +70,29 @@ Ctrl-c Ctrl-c
 
 ## Cross-platform distro Cosmos
 
-Related to Redbean:
+Related to Redbean, that is one part of Cosmos:
 
 https://justine.lol/cosmo3/
+
+## Full source build of Cosmopolitan
+
+This is needed, if you are packaging Cosmopolitan related for some distro,
+that requires full source build, and can not use precompiled compiler.
+
+You'll need to use gcc-12.3 now, because that's the latest version
+ahgamut has patched to build with cosmopolitan libc:
+
+https://github.com/ahgamut/gcc/tree/portcosmo-12.3
+
+Use the latest commit. To compile gcc, run:
+```
+make all-gcc
+
+make install -i
+```
+Gcc's default build process tries to compile libgcc and libgomp
+with the newly built xgcc binary, which ahgamut has not gotten
+completely right just yet.
 
 ## WeKan Studio: General purpose web framework
 
