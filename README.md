@@ -139,3 +139,9 @@ In WeKan Studio, showing current visual look of `All Boards` page of WeKan Open 
 More info about progress at https://github.com/wekan/wekanstudio/blob/main/CHANGELOG.md
 
 ![screenshot](screenshot.png)
+
+## Docker
+
+TODO. Related:
+
+https://github.com/solisoft/luaonbeans/blob/main/Dockerfile
