@@ -115,3 +115,16 @@
 - Minimal RAM usage
 - Offline use, when not connected to Internet. Syncing, when connected to Internet.
 
+## Other databases
+
+- Someone made a HTTP client to the arangodb database and it works pretty well
+- Redis client for redbean usage https://github.com/solisoft/luaonbeans/blob/main/.lua/redis.lua
+- Maybe make a HTTP client for DataBunker SQLite/MySQL/PostgreSQL ?
+  - https://databunker.org
+  - https://github.com/securitybunker/databunker#readme
+- Fullmoon also supports this with simple CGI interface: https://github.com/pkulchenko/fullmoon/blob/master/examples/showcase.lua#L115
+
+## About DDoS protection of Redbean
+
+- https://ipv4.games runs on Redbean and SQLlite. It's been DDoS'd by botnets with 49131669 IPs.
+  It's also a write heavy application. Runs on a VM with 2 cores.
