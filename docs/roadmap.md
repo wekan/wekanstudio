@@ -58,6 +58,30 @@
 
 ### Sessions
 
+###¤ a) Cookie
+
+- Fullmoon's session signs a cookie with the HMAC of a secret only the server knows
+  - https://github.com/pkulchenko/fullmoon/blob/58fc985f8e4d0a030a5d9b83127bb61f3d1a7f85/fullmoon.lua#L1289-L1329
+- For encryption, a pure lua library like https://github.com/philanc/plc/ is required
+  - https://github.com/pkulchenko/fullmoon/blob/58fc985f8e4d0a030a5d9b83127bb61f3d1a7f85/fullmoon.lua
+- Reading around a bit, apparently this is a common scheme with a couple tweaks:
+  - If you don't have any secret data in there (e.g. just ID and timestamp), you only need
+    a signature and don't have to encrypt the authorization HTTP header instead of (or in addition to?)
+    the session cookies.
+  - So if I'm reading the Fullmoon code right, "session" is an encrypted cookie, very similar to JWT
+    (but a Lua version). I did dig up this article which suggests my strategy is inferior to just
+    storing the session data on the server side and cookie-ing (encrypted or via HTTPS or both)
+    the random ID of the session data.
+  - http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/
+  - Which honestly doesn't sound too hard. Store it in an in-memory table if the server is always
+    running (deploys will kick everyone but eh, so will leaving your browser open till the session expires),
+    or in a Redis cache if I really want it to be robust (I'm sure Redbean can talk to Redis somehow),
+    or even just in an encrypted table in Sqlite (call it poor man's Redis, but it would work).
+  - Oh, and I could use the session mechanism in Fullmoon to store the client-side key/ID securely.
+
+#### b) Initial design of login without cookies and without localstorage
+
+- Similar to browser fingerprinting
 - Based on database structure of Meteor WeKan https://wekan.github.io , with additional fields
 - Stored to SQLite database table
 - Table fields, for example:
