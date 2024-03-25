@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+ 
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+<title>All Boards</title>
+<style type="text/css">
+body, h1, h2, h3, h4, p, th, td {
+  font-family: sans-serif;
+}
+</style>
+  
+</head>
+<body>
+<span>[Logo]
+&nbsp;&nbsp; &#127968; All Boards &nbsp;&nbsp; </span><a href="/">WeKan (R)
+Open Source kanban with MIT license</a><span>&nbsp; </span>
+<button value="1" name="buttonDragHandles" title="Show button drag handles" alt="Show button drag handles"><span>&#128070;</span><span>&#128711;</span><span> </span></button><button value="1" name="Notifications">&#128276; Notifications</button><span>&nbsp;</span><button value="1" name="UserSettings">⚙️ User Settings</button><span> User Name &nbsp; <button value="1" name="BoardSettings">⚙️ Board Settings</button></span> <br>
+
+<br>
+
+<span>New name:&nbsp;</span><input id="newname" name="newname" required="" minlength="4" maxlength="200" size="10" type="text"><span> Add:&nbsp;<button name="AddBoard">Board</button>&nbsp;<button name="AddTemplateBoard">Template
+Board</button>&nbsp;<button name="AddOrganization">&#127970; Organization</button>
+<button name="AddTeam"><span>&#128101; Team</span></button></span><br>
+
+<span>Move Source </span><button value="1" name="Up" alt="Up">&#8593; Up</button><span>&nbsp;</span><button value="1" name="Down">&#8595;
+Down
+</button><span>&nbsp;</span><button value="1" name="Left">&#8592;
+Left</button><span>&nbsp;</span><button value="1" name="Right">&#8594;
+Right
+</button><span>&nbsp;</span><button value="1" name="Top">&#10514;
+Top</button><span>&nbsp;</span><button value="1" name="Bottom">&#10515; Bottom</button><span>&nbsp;</span><button value="1" name="Leftmost">&#8676; Leftmost</button><span>&nbsp;</span><button value="1" name="Rightmost">&#8677; Rightmost</button><span>, </span><span> to Other&nbsp;<button name="OtherBoard">Board</button>&nbsp;<button name="OtherOrganization">&#127970; Organization</button>
+<button name="OtherTeam">&#128101; Team</button></span> , or <span> to&nbsp;</span><button value="1" name="Above">&#8593;
+Above</button><span>&nbsp;</span><button name="Below">&#8595; Below</button><span>&nbsp;</span><span><button name="LeftOfTarget">&#8592; Left</button>&nbsp;<button name="RightOfTarget">&#8594;
+Right</button>&nbsp;</span><span> of Target</span><span>, or Change Source to
+<button value="1" name="Collapse">&#9660; Collapse</button>&nbsp;</span><button value="1" name="Uncollapse">&#11208; Uncollapse</button>&nbsp;<button name="TextColor">Text Color</button>&nbsp;<button name="BackgroundColor">Backgroud Color</button> <button name="Background Image">Backgroud Image</button><br>
+
+<span></span><span></span><br>
+
+<span>[Organization 1]
+</span><span></span><span><input name="Org1" type="checkbox"></span><span>Source</span><span><input name="Org1" type="checkbox"></span><span> Target |</span><span> </span><span></span><a href="/org2">Organization
+2</a><span>&nbsp;<input name="Org2" type="checkbox"> Source</span><span><input name="Org2" type="checkbox">Target</span><span> |&nbsp;</span><span></span><a href="/org3">Organization
+3</a><span>&nbsp;<input name="Org3" type="checkbox">Source </span><span></span><span><input name="Org1" type="checkbox"></span><span> Target</span><span> |</span><span></span><span> </span><a href="/org4">Organization
+4</a><span>&nbsp;<input name="Org4" type="checkbox"> Source </span><span></span><span><input name="Org1" type="checkbox"></span><span> Target</span><span></span><br>
+
+<br>
+
+<span></span><span>[Team 1]</span><span> <input name="Org4" type="checkbox"> Source </span><span></span><span><input name="Org1" type="checkbox"></span><span> Target</span><span></span><span> | </span><a href="/team2">Team 2</a><span>&nbsp; </span><span><input name="Org4" type="checkbox"> Source </span><span></span><span><input name="Org1" type="checkbox"></span><span> Target </span><span></span><span>| </span><span></span><a href="/team3">Team 3</a><span>&nbsp; </span><span><input name="Org4" type="checkbox"> Source </span><span></span><span><input name="Org1" type="checkbox"></span><span> Target</span><span> </span><span>|</span><span></span><span> </span><a href="/team4">Team 4</a><span> <input name="Org4" type="checkbox"> Source </span><span></span><span><input name="Org1" type="checkbox"></span><span> Target</span><span></span>
+<h2>Organization 1</h2>
+
+<h3>Team 1<br>
+</h3>
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="text-align: center;">&nbsp;BoardTitle1<br>
+BDesc1<br>
+      <div style="text-align: left;"><input tabindex="2" name="b1" type="checkbox"> Source&nbsp; <input tabindex="2" name="b1" type="checkbox">Target </div>
+      </td>
+      <td style="text-align: right;">
+      <div style="text-align: center;">BoardTitle2<br>
+BDesc2<br>
+      </div>
+      <div style="text-align: left;"><input tabindex="2" name="b1" type="checkbox">Source<input tabindex="2" name="b1" type="checkbox">
+Target<br>
+      </div>
+      </td>
+      <td>
+      <div style="text-align: center;">BoardTitle3<br>
+BDesc3<br>
+      </div>
+      <input tabindex="2" name="b1" type="checkbox">Source <input tabindex="2" name="b1" type="checkbox">Target </td>
+      <td>
+      <div style="text-align: center;">BoardTitle4<br>
+BDesc4<br>
+      </div>
+      <input tabindex="2" name="b1" type="checkbox">Source <input tabindex="2" name="b1" type="checkbox">Target </td>
+      <td>
+      <div style="text-align: center;">BoardTitle5<br>
+BDesc5<br>
+      </div>
+      <input tabindex="2" name="b1" type="checkbox">Source<input tabindex="2" name="b1" type="checkbox"> Target<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+</body></html>
