@@ -7,10 +7,12 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 
 ### Why
 
-I did not find existing still maintained web framework, that works in all browsers.
+1) Minimal code
 
-So, that's why I'm creating a new web framework https://github.com/wekan/wekanstudio where
-webpages of apps are visible in all web browsers, also when browser does not support Javascript:
+- https://danluu.com/web-bloat/
+- https://news.ycombinator.com/item?id=39729057
+
+2) Web pages of apps that work at all browsers:
 	
 1. Modern browsers.
 2. Maintained browsers, like Amiga IBrowse, Netsurf.
