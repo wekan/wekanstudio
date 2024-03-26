@@ -1,16 +1,25 @@
 ## All Boards
 
-This page is similar to `All Boards` page of WeKan Open Source kanban https://wekan.github.io
+### Description
 
-Currently I'm learning how to get webpages of apps visible in all web browsers:
+`All Boards` page shows list of All Boards user currently has access to.
+It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.github.io
+
+### Web Browsers
+
+Currently I'm creating a new web framework https://github.com/wekan/wekanstudio where
+webpages of apps are visible in all web browsers:
+
 1. Modern browsers.
 2. Maintained browsers, like Amiga IBrowse, Netsurf.
 3. Text browsers, like ELinks, w3m.
 3. Legacy browsers, like IE5, Netscape.
 
+### Bugs
 
+- Button HTML does not work in IE3. So maybe it only works at IE5 or newer.
 
-Steps:
+### Steps
 
 1. I converted some Font Awesome icons https://fontawesome.com/v4/icons/ to PNG at https://fa2png.app
 2. With GIMP, I converted PNG to GIF. GIF files are smaller than PNG.
@@ -24,14 +33,14 @@ Steps:
 7. Profit, because of faster loader pages, and smaller bandwidth bills.
 
 
-## Demo
+### Demo
 
 https://wekanstudio.github.io/allboards.html
 
-## Code
+### Code
 
 https://github.com/wekanstudio/wekanstudio.github.io/blob/main/allboards.html
 
-## License
+### License
 
 MIT.
