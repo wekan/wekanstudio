@@ -36,7 +36,6 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
    No need to have all of Font Awesome.
 7. Profit, because of faster loader pages, and smaller bandwidth bills.
 
-
 ### Demo
 
 https://wekanstudio.github.io/allboards.html
