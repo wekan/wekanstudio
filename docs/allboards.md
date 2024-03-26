@@ -5,11 +5,13 @@
 `All Boards` page shows list of All Boards user currently has access to.
 It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.github.io
 
-### Web Browsers
+### Why
 
-Currently I'm creating a new web framework https://github.com/wekan/wekanstudio where
-webpages of apps are visible in all web browsers:
+I did not find existing still maintained web framework, that works in all browsers.
 
+So, that's why I'm creating a new web framework https://github.com/wekan/wekanstudio where
+webpages of apps are visible in all web browsers, also when browser does not support Javascript:
+	
 1. Modern browsers.
 2. Maintained browsers, like Amiga IBrowse, Netsurf.
 3. Text browsers, like ELinks, w3m.
