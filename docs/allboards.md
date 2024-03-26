@@ -20,7 +20,7 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 
 ### Bugs
 
-- Button HTML does not work in IE3. So maybe it only works at IE5 or newer.
+- Button HTML does not work in IE3. So maybe it only works at IE5 or newer. https://caniuse.com/?search=button
 
 ### Steps
 
