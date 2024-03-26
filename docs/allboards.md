@@ -7,21 +7,16 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 
 ### Why
 
-1) Minimal code
-
+1. Minimal code
   - https://danluu.com/web-bloat/
   - https://news.ycombinator.com/item?id=39729057
-
-2) Web pages of apps that work at all browsers:
-	
-  1. Modern browsers.
-  2. Maintained browsers, like Amiga IBrowse, Netsurf.
-  3. Text browsers, like ELinks, w3m.
-  4. Legacy browsers, like IE5, Netscape.
-
-3) I'm creating a new web framework, with newest tech:
-
-  https://github.com/wekan/wekanstudio
+2. Web pages of apps that work at all browsers:
+  - Modern browsers.
+  - Maintained browsers, like Amiga IBrowse, Netsurf.
+  - Text browsers, like ELinks, w3m.
+  - Legacy browsers, like IE5, Netscape.
+3. I'm creating a new web framework, with newest tech:
+  - https://github.com/wekan/wekanstudio
 
 ### Bugs
 
