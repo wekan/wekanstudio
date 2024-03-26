@@ -19,6 +19,10 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 3. Text browsers, like ELinks, w3m.
 3. Legacy browsers, like IE5, Netscape.
 
+3) I'm creating a new web framework, with newest tech:
+
+https://github.com/wekan/wekanstudio
+
 ### Bugs
 
 - Button HTML does not work in IE3. So maybe it only works at IE5 or newer.
