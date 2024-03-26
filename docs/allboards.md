@@ -42,7 +42,8 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 
 ### Demo
 
-https://wekanstudio.github.io/allboards.html
+- GIF icons: https://wekanstudio.github.io/allboards-gif.html
+- Unicode icons: https://wekanstudio.github.io/allboards-unicode.html
 
 ### Code
 
