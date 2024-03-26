@@ -22,7 +22,7 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 
 - Button HTML does not work in IE3. So maybe it only works at IE5 or newer. https://caniuse.com/?search=button
 
-### Steps
+### Steps of Font Awesome to GIF
 
 1. I converted some Font Awesome icons https://fontawesome.com/v4/icons/ to PNG at https://fa2png.app
 2. With GIMP, I converted PNG to GIF. GIF files are smaller than PNG.
@@ -34,6 +34,11 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 6. I only use those GIF icons visible at webpage, resulting to smaller size, faster loading pages.
    No need to have all of Font Awesome.
 7. Profit, because of faster loader pages, and smaller bandwidth bills.
+
+### Alternatives to GIF
+
+- Unicode. But it does not show correctly at some browsers.
+- ASCII art.
 
 ### Demo
 
