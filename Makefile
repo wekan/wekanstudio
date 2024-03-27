@@ -88,6 +88,9 @@ start: add ${REDBEAN}
 	mv ${REDBEAN} ${FINALFILE} && \
 	./${FINALFILE} -s
 
+build: add ${REDBEAN}
+	mv ${REDBEAN} ${FINALFILE}
+
 # Verbose below. More silence above.
 
 startdev: add ${REDBEAN}
