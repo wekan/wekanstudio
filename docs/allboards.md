@@ -45,7 +45,12 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 - GIF icons: https://wekanstudio.github.io/allboards-gif.html
 - Unicode icons: https://wekanstudio.github.io/allboards-unicode.html
 
-Note: These are static webpages. Buttons do not work yet. This is only for testing, that pages are visible at all browsers.
+What is this all about:
+
+- These are static webpages. Buttons do not work yet. This is only for testing, that pages are visible at all browsers.
+- Idea is to select Board icons, by selecting Source checkboxes, and clicking Joystick buttons to move selected to right, left, etc.
+- And, also to do other actions to selected Source and Target icons.
+- This is very much still In Progress. There will be many improvements to Web UI. It will be looking a lot more like full-featured kanban board.
 
 ### Code
 
