@@ -4,7 +4,7 @@
 # │ as it is written in the following disclaimers:                   │
 # │   • http://unlicense.org/                                        │
 # ╚─────────────────────────────────────────────────────────────────*/
-.PHONY: all clean test log ls log start start-daemon restart-daemon stop-daemon
+.PHONY: all clean test log ls log start start-daemon restart-daemon stop-daemon build
 
 # Change redbean to whatever you want
 FINALFILE=wekan.com
