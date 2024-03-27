@@ -45,6 +45,8 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 - GIF icons: https://wekanstudio.github.io/allboards-gif.html
 - Unicode icons: https://wekanstudio.github.io/allboards-unicode.html
 
+Note: These are static webpages. Buttons do not work yet. This is only for testing, that pages are visible at all browsers.
+
 ### Code
 
 https://github.com/wekanstudio/wekanstudio.github.io/blob/main/allboards.html
