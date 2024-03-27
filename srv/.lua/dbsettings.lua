@@ -1,0 +1,1 @@
+DBNAME = 'wekan.db'

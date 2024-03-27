@@ -248,7 +248,9 @@ function pc.run(port)
     fm.run({ port = port or 8000 })
 end
 
-local DBNAME = 'wekan.db'
+--- This is now loaded from settings.lua:
+--- local DBNAME = 'wekan.db'
+require "dbsettings"
 
 function pc:initDb()
     fm.logInfo("Initializing database")
