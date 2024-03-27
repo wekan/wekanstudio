@@ -32,3 +32,5 @@ Add samples of all functionality like:
 - plain file
 - form
 - etc
+
+Some of those are already at https://github.com/pkulchenko/fullmoon/blob/master/examples/showcase.lua
