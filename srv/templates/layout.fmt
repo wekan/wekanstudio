@@ -59,19 +59,20 @@
   <link rel="stylesheet" type="text/css" href="client/components/swimlanes/swimlanes.css?hash=6557496c84b892fcea91eea6387eae25dd45be8f">
   <link rel="stylesheet" type="text/css" href="client/components/users/userAvatar.css?hash=1a0a9d7db248298750ddcd656a7594677ea6e13d">
   <link rel="stylesheet" type="text/css" href="client/components/users/userForm.css?hash=b7fbc21a37c4d575610887be1eefdf144ccd8029">
-<title>WeKan</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" crossOrigin="use-credentials" href="images/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="apple-mobile-web-app-title" content="Wekan">
-<meta name="application-name" content="Wekan">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
+  <title>WeKan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" crossOrigin="use-credentials" href="images/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="Wekan">
+  <meta name="application-name" content="Wekan">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+</head>
 
 <body>
 

@@ -213,15 +213,15 @@ local function allboardsList(r)
 end
 
 local function signIn(r)
-  return fm.serveContent("sign-in", {})
+  return fm.serveContent("signIn", {})
 end
 
 local function signUp(r)
-  return fm.serveContent("sign-up", {})
+  return fm.serveContent("signUp", {})
 end
 
 local function forgotPassword(r)
-  return fm.serveContent("forgot-password", {})
+  return fm.serveContent("forgotPassword", {})
 end
 
 
@@ -237,7 +237,7 @@ fm.setRoute(fm.GET "/allboards", allboardsList)
 fm.setRoute(fm.GET "/sign-in", signIn)
 fm.setRoute(fm.GET "/sign-up", signUp)
 fm.setRoute(fm.GET "/forgot-password", forgotPassword)
-fm.setRoute(fm.GET "/", welcome)
+fm.setRoute(fm.GET "/", signIn)
 fm.setRoute(fm.GET "/oops", showError)
 
 -- set static assets

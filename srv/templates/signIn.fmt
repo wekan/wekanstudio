@@ -1,124 +1,59 @@
 {% function block.content() %}
 
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
   <center>
-
-
-  {% 
-  --if ($hideLogo != true) 
-
-      -- // Login logo link URL start
-      -- if (!empty($loginLogoLinkUrl)) {
-      --  echo '<a href="' . urlencode($loginLogoLinkUrl) . '">';
-      -- }
-
-      -- // Login logo image URL
-      -- if (!empty($loginLogoImageUrl)) {
-      --  echo '<img src="' . urlencode($loginLogoImageUrl) . '" alt="' . 
-      --  htmlentities($productName) .
-      --  '" width="' . strip_tags($loginLogoImageWidth) .
-      --  '" height="' . strip_tags($loginLogoImageHeight) . '">';
-      -- }
-
-      -- // Login logo link URL end
-      --if (!empty($loginLogoLinkUrl)) {
-      --  echo "</a>";
-      -- }
-
-  -- }
-
-  --  ?>
-  %}
-          <br /><br />
   
-  {%
-  -- <?php
-  -- // <table width="80%" border="0" margin="0" padding="0">
-  -- ?>
-  %}
           <table border="0" padding="0" spacing="0" margin="0">
               <tr>
                   <td style="background-color: #f7f7f7;">
                       <h3 style="font-size: 140%; padding-top: 10px; padding-left: 20px; padding-bottom: 0px;">
-                          <?php translate("log-in"); ?>
+                          Login
                       </h3>
                   </td>
               </tr>
               <tr>
                   <td style="padding-top: 20px; padding-left: 20px; padding-right: 20px; background-color: white;">
-                      <form role="form" id="at-pwd-form" novalidate="" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+                      <form role="form" id="at-pwd-form" novalidate="" action="sign-in" method="POST">
 
                           <div class="at-form-authentication">
-                              <label for="select-authentication"><?php translate("authentication-method"); ?></label>
+                              <label for="select-authentication">Authentication method</label>
                               <br />
-                              <input type="radio" id="auth-password" name="select-authentication" value="password" required>
-                              <label for="auth-password"><?php translate("password"); ?></label><br>
-                              <input type="radio" id="auth-oauth2" name="select-authentication" value="oauth2">
-                              <label for="auth-oauth2"><?php translate("oauth2"); ?></label><br>
-                              <input type="radio" id="auth-ldap" name="select-authentication" value="ldap">
-                              <label for="auth-ldap"><?php translate("ldap"); ?></label><br><br>
+                              <input type="radio" id="auth-password" name="select-authentication" value="password" required>
+                              <label for="auth-password">Password</label><br>
+                              <input type="radio" id="auth-oauth2" name="select-authentication" value="oauth2">
+                              <label for="auth-oauth2">OAuth2</label><br>
+                              <input type="radio" id="auth-ldap" name="select-authentication" value="ldap">
+                              <label for="auth-ldap">LDAP</label><br><br>
                           </div>
                           <br />
                           <div class="at-input">
-                              <label for="at-field-username_and_email">
-                              
-{%                              
---                              <?php translate("username");
--- echo " ";
--- translate("or");
--- echo " ";
--- translate("email");
--- ?>
- %}
-
-</label><br />
+                              <label for="at-field-username_and_email">Username or Email</label><br />
                               <input type="text" size="41" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="" autocapitalize="none" autocorrect="off" required>
                           </div>
                           <br />
-                          <div class="at-input"><label for="at-field-password">
-                          Password
-
-{%                          
---                          <?php translate("password"); ?>
-%}                                               
-
-                          </label><br />
+                          <div class="at-input"><label for="at-field-password">Password</label><br />
                               <input type="password" size="41" id="at-field-password" name="at-field-password" placeholder="" autocapitalize="none" autocorrect="off" required>
                           </div>
                           <br />
-
-                          <input type="submit" name="login" class="at-btn submit" id="at-btn" value="
-{%                         
--- <?php translate("log-in"); ?>
--- ">
-%}
+                          <input type="submit" name="login" class="at-btn submit" id="at-btn" value="Login">
                       </form>
   
                       <br />
   
                       <div class="at-signup-link">
-                          <p><a href="/sign-up" id="at-signUp" class="at-link at-signup">
-Registration
-{%
--- <?php translate("registration"); ?>
-%}                          
-
-                          </a></p>
+                          <p><a href="sign-up" id="at-signUp" class="at-link at-signup">Register</a></p>
                       </div>
   
                       <div class="at-pwd-link">
-                      <p><a href="/forgot-password" id="at-forgotPwd" class="at-link at-pwd">
-Forgot password
-{%
--- <?php translate("forgot-password"); ?>
-%}                          
-                      
-                      </a></p>
+                          <p><a href="forgot-password" id="at-forgotPwd" class="at-link at-pwd">Forgot password</a></p>
                       </div>
   
                   </td>
               </tr>
           </table>
-      </center>
+  </center>
   
 {% end %}
-{% render('layout', {active_menu='singIn'}) %}
+{% render('layoutSignIn', {active_menu='singIn'}) %}
