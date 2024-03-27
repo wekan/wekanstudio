@@ -25,7 +25,7 @@ It is similar to `All Boards` page of WeKan Open Source kanban https://wekan.git
 ### Steps of Font Awesome to GIF
 
 1. I converted some Font Awesome icons https://fontawesome.com/v4/icons/ to PNG at https://fa2png.app
-2. With GIMP, I converted PNG to GIF. GIF files are smaller than PNG.
+2. With GIMP, I converted PNG to GIF. GIF files are smaller than PNG. GIF works in some Web Browsers that do not support PNG.
 3. I added some of those icons inside of HTML buttons.
 4. I used KompoZer https://sourceforge.net/projects/kompozer/files/current/0.8b3/ to create UI layout with tables, and then cleaned up that HTML.
 5. I can modified GIF files with GIMP, for example rotating image 90 decrees clockwise.
