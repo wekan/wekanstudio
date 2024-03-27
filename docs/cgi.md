@@ -7,6 +7,7 @@ https://github.com/pkulchenko/fullmoon/blob/master/examples/showcase.lua#L114-L1
 This code:
 - Adds route like `/cgi` , it could also be any other URL like `/api` or `/product`.
 - That route runs another `redbean.com` executeable process. It could also be Node.js process, or some other process.
+- Some other routes are at https://github.com/wekan/wekanstudio/blob/main/srv/.lua/wekan.lua#L228
 - That executeable runs some code, and exists with Redbean Lua code `unix.exit()`.
 - Redbean specific additional commands are listed at https://redbean.dev
 
