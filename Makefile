@@ -91,6 +91,11 @@ start: add ${REDBEAN}
 build: add ${REDBEAN}
 	mv ${REDBEAN} ${FINALFILE}
 
+buildlocal:
+	cp -f ${REDBEAN}.template ${REDBEAN}
+	cd srv/ && ${ZIP} -r ../${REDBEAN} `ls -A`
+	mv ${REDBEAN} ${FINALFILE}
+
 # Verbose below. More silence above.
 
 startdev: add ${REDBEAN}
