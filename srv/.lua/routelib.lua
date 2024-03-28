@@ -1,6 +1,6 @@
 
 -- framework setup
-local fm = require "fullmoon"
+fm = require "fullmoon"
 
 -- local setup
 require "formlib"
