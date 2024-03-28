@@ -17,6 +17,7 @@
                   <td style="padding-top: 20px; padding-left: 20px; padding-right: 20px; background-color: white;">
                       <form role="form" id="at-pwd-form" novalidate="" action="sign-in" method="POST">
 
+<!--
                           <div class="at-form-authentication">
                               <label for="select-authentication">Authentication method</label>
                               <br />
@@ -28,6 +29,7 @@
                               <label for="auth-ldap">LDAP</label><br><br>
                           </div>
                           <br />
+-->
                           <div class="at-input">
                               <label for="at-field-username_and_email">Username or Email</label><br />
                               <input type="text" size="41" id="at-field-username_and_email" name="at-field-username_and_email" placeholder="" autocapitalize="none" autocorrect="off" required>
