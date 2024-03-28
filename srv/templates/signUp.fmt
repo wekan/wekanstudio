@@ -6,16 +6,16 @@
 
   <center>
 
-        <table>
-            <tr>
-                <td>
-                    <h1>Register</h1>
-
-                    <section class="auth-dialog">
-    <div class="at-form">
-        <div class="at-title">
-    <h3>Create new account</h3>
-  </div>
+          <table border="0" padding="0" spacing="0" margin="0">
+              <tr>
+                  <td style="background-color: #f7f7f7;">
+                      <h3 style="font-size: 140%; padding-top: 10px; padding-left: 20px; padding-bottom: 0px;">
+                          Register
+                      </h3>
+                  </td>
+              </tr>
+              <tr>
+                  <td style="padding-top: 20px; padding-left: 20px; padding-right: 20px; background-color: white;">
       
   <div class="at-pwd-form"><div class="at-form-authentication" style="display: none;">
   <label>Login</label>
@@ -54,7 +54,7 @@
    <input id="at-field-invitationcode" type="text" name="at-field-invitationcode" placeholder="Invitation code">
    </div>
    <br />
-   <input type="submit" name="register" class="at-btn submit" id="at-btn" value="Rekister&ouml;idy">
+   <input type="submit" name="register" class="at-btn submit" id="at-btn" value="Register">
    </form>
 
    <br>
@@ -69,14 +69,10 @@
     <div class="at-pwd-link">
       <p><a href="/forgot-password" id="at-forgotPwd" class="at-link at-pwd">Forgot Password</a></p>
     </div>
-
-  </div>
-    </div>
-                           
-
-                </td>
-            </tr>
-        </table>
+  
+                  </td>
+              </tr>
+          </table>
 
   </center>
 {% end %}
