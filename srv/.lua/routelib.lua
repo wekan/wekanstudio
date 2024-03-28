@@ -224,6 +224,7 @@ local function forgotPassword(r)
   return fm.serveContent("forgotPassword", {})
 end
 
+require "routecustom"
 
 fm.setRoute("/owners/new", newOwner)
 fm.setRoute(fm.GET "/owners/find", findOwners)
