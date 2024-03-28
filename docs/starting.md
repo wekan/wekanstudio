@@ -18,7 +18,7 @@ Makefile:
 - When started, if SQLite3 database `wekan.db` does not exist at same directory as `wekan.com`, it will be created.
 - For s390x, RISC-V etc, you can compile and run with blink https://github.com/jart/blink , like `blink wekan.com`.
 
-Port defaults to 8000 and is sepecified at the bottom of file https://github.com/wekan/wekanstudio/blob/main/srv/.lua/wekan.lua
+Port defaults to 8000 and is sepecified at the bottom of file https://github.com/wekan/wekanstudio/blob/main/srv/.lua/routelib.lua
 
 Open http://localhost:8000
 

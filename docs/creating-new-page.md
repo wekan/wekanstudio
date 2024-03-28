@@ -2,7 +2,7 @@
 
 ## Currently
 
-1. Add new database query to bottom of https://github.com/wekan/wekanstudio/blob/main/srv/.lua/wekan.lua
+1. Add new database query to bottom of https://github.com/wekan/wekanstudio/blob/main/srv/.lua/routecustom.lua
 
 ```
 local function allboardsList(r)
@@ -18,7 +18,8 @@ end
 fm.setRoute(fm.GET "/allboards", allboardsList)
 ```
 
-3. Add new page to top menu of https://github.com/wekan/wekanstudio/blob/main/srv/templates/layout.fmt
+3. Use existing layout of https://github.com/wekan/wekanstudio/blob/main/srv/templates/layout.fmt
+   or add new, like in layoutSignIn.fmt and signIn.fmt where at bottom is included layout file.
 
 ```
 <li class="nav-item">
