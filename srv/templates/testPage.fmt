@@ -10,4 +10,4 @@
   </center>
   
 {% end %}
-{% render('layoutSignIn', {active_menu='singIn'}) %}
+{% render('layoutSignIn', {active_menu='testPage'}) %}
