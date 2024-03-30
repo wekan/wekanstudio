@@ -1,40 +1,37 @@
 {% function block.content() %}
 
-<div id="header-quick-access" class="">
-  <div id="headerIsSettingDatabaseCallDone" style="display: block;">
-    <img src="images/logo-header.png" alt="WeKan ®" title="WeKan ®">
-  </div>
-  <span class="allBoards"><a href="/"><img src="font/arrow/black/home.gif" width="12px" /> All Boards</a></span>
+  <span><img src="images/logo-header.png" alt="WeKan ®" title="WeKan ®"></span>
 
-  <ul class="header-quick-access-list">
-    <li>
-      <a href="/b/D2SzJKZDS4Z48yeQH/wekan-r-open-source-kanban-board-with-mit-license">
-        <div class="viewer" dir="auto"><p>WeKan ® Open Source Kanban board with MIT license</p></div>
-      </a>
-    </li>
-    <li>
-      <a href="/b/JctQEtkayWXTTJyzt/wekan-multiverse">
-        <div class="viewer" dir="auto"><p>WeKan Multiverse</p></div>
-      </a>
-    </li>
-  </ul>
-  <a class="js-toggle-desktop-drag-handles" title="Show desktop drag handles" alt="Show desktop drag handles" href="#" aria-label="Show desktop drag handles">
-    <span><img src="font/arrow/black/arrows.gif" width="12px" /></span>
-    <span><img src="font/arrow/black/ban.gif" width="12px" /></span>
-    <span> </span>
-  </a>
+  <span class="allBoards"><a href="/"><img src="font/arrow/white/home.gif" width="12px" /> All Boards</a></span>
 
-  <div id="notifications" class="board-header-btns right">
-    <button value="1" name="Notifications"><img src="font/notification/black/bell.gif" width="12px" /> Notifications</button>
-    <span>&nbsp;</span>
-  </div>
+  <span>
+    <a href="/b/D2SzJKZDS4Z48yeQH/wekan-r-open-source-kanban-board-with-mit-license">
+      <div class="viewer" dir="auto"><p>WeKan ® Open Source Kanban board with MIT license</p></div>
+    </a>
+  </span>
 
-  <div id="header-user-bar">
-    <button value="1" name="UserSettings"><img src="font/setting/black/cog.gif" width="12px" /> User Settings</button>
-    <span>User Name</span>
-  </div>
+  <span>
+    <a href="/b/JctQEtkayWXTTJyzt/wekan-multiverse">
+      <div class="viewer" dir="auto"><p>WeKan Multiverse</p></div>
+    </a>
+  </span>
 
- </div>
+  <span>
+    <a class="js-toggle-desktop-drag-handles" title="Show desktop drag handles" alt="Show desktop drag handles" href="#" aria-label="Show desktop drag handles">
+      <img src="font/arrow/white/arrows.gif" width="12px" />
+      <img src="font/arrow/white/ban.gif" width="12px" />
+    </a>
+  </span>
+
+  <span>
+    <button value="1" name="Notifications"><img src="font/notification/white/bell.gif" width="12px" /> Notifications</button>
+  </span>
+
+  <span>
+    <button value="1" name="UserSettings"><img src="font/setting/white/cog.gif" width="12px" /> User Settings</button>
+  </span>
+
+  <span>User Name</span>
   
 <div id="header" class="">
   <div id="header-main-bar" class="wrapper">
