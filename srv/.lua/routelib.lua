@@ -212,11 +212,11 @@ local function allboardsList(r)
   return fm.serveContent("boards/allboardsList", {boards = boards})
 end
 
-local function allBoardsGif(r)
+local function allboardsGif(r)
   return fm.serveContent("boards/allboardsGif", {})
 end
 
-local function allBoardsUnicode(r)
+local function allboardsUnicode(r)
   return fm.serveContent("boards/allboardsUnicode", {})
 end
 
@@ -241,6 +241,8 @@ fm.setRoute("/owners/:id[%d]/pets/:pet_id[%d]/edit", editPet)
 fm.setRoute("/owners/:id[%d]/pets/:pet_id[%d]/visits/new", newVisit)
 fm.setRoute(fm.GET "/vets", vetList)
 fm.setRoute(fm.GET "/allboards", allboardsList)
+fm.setRoute(fm.GET "/allboardsgif", allboardsGif)
+fm.setRoute(fm.GET "/allboardsunicode", allboardsUnicode)
 fm.setRoute(fm.GET "/sign-in", signIn)
 fm.setRoute(fm.GET "/sign-up", signUp)
 fm.setRoute(fm.GET "/forgot-password", forgotPassword)
