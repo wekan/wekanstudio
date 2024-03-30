@@ -212,6 +212,14 @@ local function allboardsList(r)
   return fm.serveContent("boards/allboardsList", {boards = boards})
 end
 
+local function allBoardsGif(r)
+  return fm.serveContent("boards/allboardsGif", {})
+end
+
+local function allBoardsUnicode(r)
+  return fm.serveContent("boards/allboardsUnicode", {})
+end
+
 local function signIn(r)
   return fm.serveContent("signIn", {})
 end

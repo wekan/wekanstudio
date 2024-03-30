@@ -1,0 +1,227 @@
+{% function block.content() %}
+
+<span>[Logo]
+&nbsp;&nbsp; <img src="font/arrow/black/home.gif" width="12px" /> All Boards &nbsp;&nbsp; </span><a href="/">WeKan (R)
+Open Source kanban with MIT license</a><span>&nbsp; </span>
+
+<button type="submit" value="1" name="buttonDragHandles" title="Show button drag handles" alt="Show button drag handles">
+  <span><img src="font/arrow/black/arrows.gif" width="12px" /></span>
+  <span><img src="font/arrow/black/ban.gif" width="12px" /></span>
+  <span> </span>
+</button>
+
+<button value="1" name="Notifications"><img src="font/notification/black/bell.gif" width="12px" /> Notifications</button>
+<span>&nbsp;</span>
+
+<button value="1" name="UserSettings"><img src="font/setting/black/cog.gif" width="12px" /> User Settings</button>
+<span> User Name &nbsp;
+
+<button value="1" name="BoardSettings"><img src="font/setting/black/cog.gif" width="12px" /> Board Settings</button>
+</span>
+<br>
+
+<img src="font/arrow/black/arrows.gif" width="12px" />
+
+<br>
+
+<span>New name:&nbsp;</span>
+<input id="newname" name="newname" required="" minlength="4" maxlength="200" size="10" type="text">
+
+<span>
+  Add:&nbsp;<button name="AddBoard">Board</button> &nbsp;
+  <button name="AddTemplateBoard">Template Board</button> &nbsp;
+  <button name="AddOrganization"><img src="font/setting/black/sitemap.gif" width="12px" /> Organization</button>
+  <button name="AddTeam"><img src="font/setting/black/users.gif" width="12px" /> Team</button>
+</span>
+
+<br />
+<br />
+
+<span>Move Source:</span>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td>&nbsp;</td>
+  <td><button value="1" name="Top" title="Top" alt="Top"><img src="font/arrow/black/step-top.gif" width="12px" /> Top</button><br>
+      <button value="1" name="Up" alt="Up"><img src="font/arrow/black/up.gif" width="12px" /> Up</button></td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+ <td><button value="1" name="Leftmost" alt="Leftmost"><img src="font/arrow/black/step-leftmost.gif" width="12px" alt="|&lt;"/> First</button>
+     <button value="1" name="Left" alt="Left"><img src="font/arrow/black/left.gif" width="12px" alt="&lt;"/> Left</button></td>
+ <td>&nbsp;</td>
+ <td><button value="1" name="Right" alt="Right">Right <img src="font/arrow/black/right.gif" width="12px" alt="&gt;"/></button>
+     <button value="1" name="Rightmost" alt="Rightmost">Last <img src="font/arrow/black/step-rightmost.gif" width="12px" alt="&gt;|"/></button>
+  </td>
+</tr>
+<tr>
+  <td>&nbsp;</td>
+  <td><button value="1" name="Down" alt="Down"><img src="font/arrow/black/down.gif" width="12px" alt="v"> Down</button><br>
+      <button value="1" name="Bottom" alt="Bottom"><img src="font/arrow/black/step-bottom.gif" alt="<u>v</u>" width="12px"> Bottom</button>
+  </td>
+  <td>&nbsp;</td>
+</tr>
+</table>
+
+<span>, </span>
+<span> to Other&nbsp;
+  <button name="OtherBoard">Board</button>&nbsp;
+  <button name="OtherOrganization"><img src="font/setting/black/sitemap.gif" width="12px" /> Organization</button>
+  <button name="OtherTeam"><img src="font/setting/black/users.gif" width="12px" /> Team</button>
+</span> , or
+<span> to&nbsp;</span>
+
+<button value="1" name="Above"><img src="font/arrow/black/up.gif" width="12px" /></button>
+<span>&nbsp;</span>
+
+<button name="Below"><img src="font/arrow/black/down.gif" width="12px" /></button>
+<span>&nbsp;</span>
+
+<span>
+  <button name="LeftOfTarget"><img src="font/arrow/black/left.gif" width="12px" /></button>&nbsp;
+  <button name="RightOfTarget"><img src="font/arrow/black/right.gif" width="12px" /></button>&nbsp;
+</span>
+
+<span> of Target</span><span>, or Change Source to
+</span>
+
+
+<button name="TextColor">Text Color</button>&nbsp;
+
+<button name="BackgroundColor">Backgroud Color</button>
+
+<button name="Background Image">Backgroud Image</button><br>
+
+<span></span>
+<span></span>
+
+<br>
+
+<br>
+
+<h2>
+<button value="1" name="Collapse" alt="Collapse"><img src="font/arrow/black/caret-down.gif" width="12px" /></button>&nbsp;
+Organization 1</h2>
+
+
+<br>
+
+<span>[Organization 1]</span>
+<span></span>
+<span><input name="Org1" type="checkbox"></span>
+<span>Source</span>
+<span><input name="Org1" type="checkbox"></span>
+<span> Target |</span>
+<span> </span>
+<span></span>
+<a href="/org2">Organization 2</a><span>&nbsp;
+
+<input name="Org2" type="checkbox"> Source</span>
+
+<span><input name="Org2" type="checkbox">Target</span>
+
+<span> |&nbsp;</span><span></span><a href="/org3">Organization 3</a>
+
+<span>&nbsp;<input name="Org3" type="checkbox">Source </span>
+
+<span></span>
+
+<span><input name="Org1" type="checkbox"></span>
+
+<span> Target</span>
+<span> |</span>
+<span></span>
+<span> </span>
+
+<a href="/org4">Organization 4</a>
+<span>&nbsp;<input name="Org4" type="checkbox"> Source </span>
+<span></span>
+<span><input name="Org1" type="checkbox"></span>
+<span> Target</span>
+<span></span>
+
+<br>
+
+
+<h3>
+<button value="1" name="Collapse" alt="Collapse"><img src="font/arrow/black/caret-down.gif" width="12px" /></button>&nbsp;
+Team 1</h3>
+
+<span></span>
+<span>[Team 1]</span>
+<span> <input name="Org4" type="checkbox"> Source </span>
+<span></span>
+<span><input name="Org1" type="checkbox"></span>
+<span> Target</span>
+<span></span><span> | </span>
+<a href="/team2">Team 2</a>
+<span>&nbsp; </span>
+<span><input name="Org4" type="checkbox"> Source </span>
+<span></span>
+<span><input name="Org1" type="checkbox"></span>
+<span> Target </span>
+<span></span>
+<span>| </span>
+<span></span><a href="/team3">Team 3</a>
+<span>&nbsp; </span>
+<span><input name="Org4" type="checkbox"> Source </span>
+<span></span>
+<span><input name="Org1" type="checkbox"></span>
+<span> Target</span>
+<span> </span>
+<span>|</span>
+<span></span>
+<span> </span>
+<a href="/team4">Team 4</a>
+<span> <input name="Org4" type="checkbox"> Source </span>
+<span></span>
+<span><input name="Org1" type="checkbox"></span>
+<span> Target</span><span></span>
+
+
+<table style="text-align: left; width: 100%;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="text-align: center;">&nbsp;BoardTitle1<br>
+BDesc1<br>
+      <div style="text-align: left;"><input tabindex="2" name="b1" type="checkbox"> Source&nbsp; <input tabindex="2" name="b1" type="checkbox">Target </div>
+      </td>
+      <td style="text-align: right;">
+      <div style="text-align: center;">BoardTitle2<br>
+BDesc2<br>
+      </div>
+      <div style="text-align: left;"><input tabindex="2" name="b1" type="checkbox">Source<input tabindex="2" name="b1" type="checkbox">
+Target<br>
+      </div>
+      </td>
+      <td>
+      <div style="text-align: center;">BoardTitle3<br>
+BDesc3<br>
+      </div>
+      <input tabindex="2" name="b1" type="checkbox">Source <input tabindex="2" name="b1" type="checkbox">Target </td>
+      <td>
+      <div style="text-align: center;">BoardTitle4<br>
+BDesc4<br>
+      </div>
+      <input tabindex="2" name="b1" type="checkbox">Source <input tabindex="2" name="b1" type="checkbox">Target </td>
+      <td>
+      <div style="text-align: center;">BoardTitle5<br>
+BDesc5<br>
+      </div>
+      <input tabindex="2" name="b1" type="checkbox">Source<input tabindex="2" name="b1" type="checkbox"> Target<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+  {% end %}
+{% end %}
+{% render('layoutAllBoardsGif',  {active_menu='allboardsGif'}) %}
