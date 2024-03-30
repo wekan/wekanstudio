@@ -85,4 +85,4 @@ BDesc5<br>
 
   {% end %}
 {% end %}
-{% render('layoutAllBoardsGif',  {active_menu='allboardsUnicode'}) %}
+{% render('layoutMinimal',  {active_menu='allboards2'}) %}
