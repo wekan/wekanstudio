@@ -4,7 +4,7 @@
   <div id="headerIsSettingDatabaseCallDone" style="display: block;">
     <img src="images/logo-header.png" alt="WeKan ®" title="WeKan ®">
   </div>
-  <span class="allBoards"><a href="/"><span class="fa fa-home"></span>🏠 Kaikki taulut</a></span>
+  <span class="allBoards"><a href="/"><img src="font/arrow/black/home.gif" width="12px" /> All Boards</a></span>
 
   <ul class="header-quick-access-list">
     <li>
@@ -18,32 +18,27 @@
       </a>
     </li>
   </ul>
-  <a class="js-toggle-desktop-drag-handles" title="Näytä työpöydän vedon kahvat" alt="Näytä työpöydän vedon kahvat" href="#" aria-label="Näytä työpöydän vedon kahvat">
-    ↔↕⏹
+  <a class="js-toggle-desktop-drag-handles" title="Show desktop drag handles" alt="Show desktop drag handles" href="#" aria-label="Show desktop drag handles">
+    <span><img src="font/arrow/black/arrows.gif" width="12px" /></span>
+    <span><img src="font/arrow/black/ban.gif" width="12px" /></span>
+    <span> </span>
   </a>
 
-  <div id="header-new-board-icon"></div>
-
   <div id="notifications" class="board-header-btns right">
-    <a class="notifications-drawer-toggle" title="Ilmoitukset" href="#" aria-label="Ilmoitukset">🔔</a>
+    <button value="1" name="Notifications"><img src="font/notification/black/bell.gif" width="12px" /> Notifications</button>
+    <span>&nbsp;</span>
   </div>
 
   <div id="header-user-bar">
-    <a class="header-user-bar-name js-open-header-member-menu" title="Jäsenasetukset" href="#" aria-label="Jäsenasetukset">
-      <div class="header-user-bar-avatar">
-        <a class="member js-member" title="Lauri Ojansivu (x@xet7.org) Normaali" href="#" aria-label="Lauri Ojansivu (x@xet7.org) Normaali">
-        <svg class="avatar avatar-initials" viewBox="0 0 24 15"><text x="50%" y="13" text-anchor="middle">LO</text></svg>
-        </a>
-      </div>
-      Lauri Ojansivu
-    </a>
+    <button value="1" name="UserSettings"><img src="font/setting/black/cog.gif" width="12px" /> User Settings</button>
+    <span>User Name</span>
   </div>
 
  </div>
   
 <div id="header" class="">
   <div id="header-main-bar" class="wrapper">
-    <h1>Tauluni</h1>
+    <h1>My Boards</h1>
   </div>
 </div>
 
@@ -58,20 +53,20 @@
     </ul>
 
     Selected:
-    <button class="js-star-board" title="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi." aria-label="Klikkaa merkataksesi taulu tähdellä. Se tulee näkymään ylimpänä taululistallasi.">⭐ Star</button>
-    <button class="js-clone-board" title="Tee kaksoiskappale taulusta" aria-label="Tee kaksoiskappale taulusta">⎘ Duplicate</button>
-    <button class="js-archive-board" title="Siirrä taulu Arkistoon" aria-label="Siirrä taulu Arkistoon">🗑 Move to Archive</button>
+    <button class="js-star-board" title="Click to star board. It will show at top of your board list." aria-label="Click to star board. It will show at top of your board list.">⭐ Star</button>
+    <button class="js-clone-board" title="Duplicate board" aria-label="Duplicate board">⎘ Duplicate</button>
+    <button class="js-archive-board" title="Move to Archive" aria-label="Move to Archive">🗑 Move to Archive</button>
 
     <ul class="board-list clearfix js-boards ui-sortable">
       <li class="js-add-board js-board">
-        <a class="board-list-item label" title="Lisää taulu" href="#" aria-label="Lisää taulu">Lisää taulu</a>
+        <a class="board-list-item label" title="Add Board" href="#" aria-label="Add Board">Add Boards</a>
       </li>
 
   {% for _, board in ipairs(boards) do %}
       <li class="tWyYpzNFCiRbt9W74 board-color-{%= board.color%} js-board ui-sortable-handle">
         <a class="js-open-board board-list-item" href="/b/tWyYpzNFCiRbt9W74/auto">
           <span class="details">
-            <span class="board-list-item-name" title="Järjestele taulu ikoneita vetämällä ja pudottamalla. Klikkaa taulu ikonia avataksesi taulun.">
+            <span class="board-list-item-name" title="Order board icons with drag drop. Click board icon to open board.">
               <div class="viewer" dir="auto"><p>{%= board.title%}</p></div>
             </span>
             <p class="board-list-item-desc"><div class="viewer" dir="auto"><p>{%= board.description%}</p></div></p>
