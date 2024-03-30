@@ -58,8 +58,8 @@ Ctrl-c Ctrl-c
 - Tested with all browsers, works also without Javascript:
   - Modern browsers based on: Chromium, Firefox, Safari
   - Upcoming browsers: Ladybird
-  - Limited Javascript: Netsurf, Amiga IBrowse
-  - Without Javascript: Lynx, Links, FreeDOS Dillo
+  - Limited Javascript: Netsurf, Amiga IBrowse, ReactOS 32bit Wine Internet Explorer
+  - Without Javascript: Lynx, ELinks, w3m w3m-img, FreeDOS Dillo
   - Legacy browsers: Netscape, IE
 - If browser has Javascript support, Javascript code can use https://unpoly.com for additional effects.
 - No cookies. No localstorage. Sessions stored to serverside database, based on browser properties. More info at https://github.com/wekan/wekanstudio/blob/main/docs/roadmap.md#sessions
