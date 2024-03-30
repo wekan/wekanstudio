@@ -212,11 +212,11 @@ local function allboardsList(r)
   return fm.serveContent("boards/allboardsList", {boards = boards})
 end
 
-local function allboardsList22(r)
+local function allboardsList2(r)
   return fm.serveContent("boards/allboardsList2", {})
 end
 
-local function allboardsList33(r)
+local function allboardsList3(r)
   return fm.serveContent("boards/allboardsList3", {})
 end
 
