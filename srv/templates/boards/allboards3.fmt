@@ -83,4 +83,4 @@ BDesc5<br>
 
 <br>
 {% end %}
-{% render('layoutMinimal',  {active_menu='allboards2'}) %}
+{% render('layoutMinimal',  {active_menu='allboards3'}) %}
