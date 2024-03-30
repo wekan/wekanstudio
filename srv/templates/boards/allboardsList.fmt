@@ -78,7 +78,5 @@
           </span>
         </a>
       </li>
-
-  {% end %}
 {% end %}
 {% render('layout',  {active_menu='allboards'}) %}

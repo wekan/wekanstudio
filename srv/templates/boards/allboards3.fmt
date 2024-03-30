@@ -82,7 +82,5 @@ BDesc5<br>
 <br>
 
 <br>
-
-  {% end %}
 {% end %}
 {% render('layoutMinimal',  {active_menu='allboards2'}) %}
