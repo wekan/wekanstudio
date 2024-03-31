@@ -79,31 +79,21 @@
       </font>
     </td>
   </tr>
-  {% counter = 1 %}
+  <tr>
   {% for _, board in ipairs(boards) do %}
-    {% if counter == 1 %}
-    <tr>
-    {% end %}
-      <td colspan="2" bgcolor="#2573a7">
-        <a href="/b/{%= counter %}/auto">
-          <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
-            {%= board.title%}
-            <br>
-            {%= board.description%}
-            <br>
-            {%= board.sort%}
-          </font>
-        </a>
-      </td>
-      {% if counter == 4 %}
-        </tr>
-        {% counter = 1 %}
-      {% end %}
-    {% end %}
+    <td colspan="2" bgcolor="#2573a7">
+      <a href="/b/{%= counter %}/auto">
+        <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
+          {%= board.title%}
+          <br>
+          {%= board.description%}
+          <br>
+          {%= board.sort%}
+        </font>
+      </a>
+    </td>
   {% end %}
-  {% if not counter == 1 %}
-    </tr>
-  {% end %}
+  </tr>
 </table>
 {% end %}
 {% render('layout',  {active_menu='allboards'}) %}
