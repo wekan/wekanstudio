@@ -61,29 +61,10 @@
     </td>
   </tr>
   <tr>
-    <td colspan="3" bgcolor="#2573a7">
-
-
-      <font size="4" color="#FFFFFF" bgcolor="#2980b9" face="arial">
-        <u><b>Board name</b></u>
-      </font>
-    </td>
-    <td colspan="3" bgcolor="#2573a7">
-      <font size="4" color="#FFFFFF" bgcolor="#2980b9" face="arial">
-        <u><b>Description</b></u>
-      </font>
-    </td>
-    <td colspan="2" bgcolor="#2573a7">
-      <font size="4" color="#FFFFFF" bgcolor="#2980b9" face="arial">
-        <u><b>Color</b></u>
-      </font>
-    </td>
-  </tr>
-  <tr>
     <td colspan="8" bgcolor="#2573a7">
       <table border="0" cellspacing="0" cellpadding="10" width="100%" id="starboardtable">
         <tr>
-          <h3>My Starred Boards</h3>
+          <font size="4" color="#FFFFFF" face="arial">Starred Boards</font>
           {% for _, starboard in ipairs(starboards) do %}
             <td width="50">
               <a href="/b/{%= starboard._id%}/{%= starboard.slug%}">
@@ -114,7 +95,7 @@
     <td colspan="8" bgcolor="#2573a7">
       <table border="0" cellspacing="0" cellpadding="10" width="100%" id="nostarboardtable">
         <tr>
-           <h3>My Boards</h3>
+          <font size="4" color="#FFFFFF" face="arial">My Boards</font>
           {% for _, nostarboard in ipairs(nostarboards) do %}
             <td width="50">
               <a href="/b/{%= nostarboard._id%}/{%= nostarboard.slug%}">
@@ -145,7 +126,7 @@
     <td colspan="8" bgcolor="#2573a7">
       <table border="0" cellspacing="0" cellpadding="10" width="100%" id="starboardtable">
         <tr>
-          <h3>Template Boards</h3>
+          <font size="4" color="#FFFFFF" face="arial">Template Boards</font>
           {% for _, templateboard in ipairs(templateboards) do %}
             <td width="50">
               <a href="/b/{%= templateboard._id%}/{%= templateboard.slug%}">

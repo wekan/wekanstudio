@@ -210,7 +210,7 @@ local function allboardsList(r)
   -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
   local starboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND stars>0 AND type='board' order by stars DESC, type ASC, sort ASC;"))
   local nostarboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND stars=0 AND type='board' order by stars DESC, type ASC, sort ASC;"))
-  local templateboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND type='%template%' order by stars DESC, type ASC, sort ASC;"))
+  local templateboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND (type='template-board' OR type='template-container') order by stars DESC, type ASC, sort ASC;"))
   return fm.serveContent("boards/allboardsList", {starboards=starboards, nostarboards=nostarboards, templateboards=templateboards })
 end
 
