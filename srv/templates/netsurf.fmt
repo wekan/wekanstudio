@@ -1,6 +1,6 @@
 {% function block.content() %}
 
-<h1 class="banner"><a href=""><img src="webimages/netsurf.png" alt="NetSurf"></a></h1>
+<h1 class="banner"><a href=""><img src="webimages/netsurf-logo.png" alt="NetSurf"></a></h1>
 
 <div class="navigation">
 <div class="navsection">
