@@ -649,10 +649,10 @@ p.award a img {
 	display: table-cell;
 	padding-top: 34px; }
 
-.developmentbuilds li a[href="/downloads/development/netsurf.zip"] {
+.developmentbuilds li a[href="downloads/development/netsurf.zip"] {
 	background: url("webimages/netsurf.png") no-repeat top center; }
 
-.developmentbuilds li a[href^="/downloads/development/netsurf-r"] {
+.developmentbuilds li a[href^="downloads/development/netsurf-r"] {
 	background: url("webimages/source.png") no-repeat top center; }
 
 .developmentbuilds li a[href="releases/nstheme.zip"] {

@@ -1,16 +1,16 @@
 {% function block.content() %}
 
-<h1 class="banner"><a href="/"><img src="netsurf.png" alt="NetSurf"></a></h1>
+<h1 class="banner"><a href=""><img src="webimages/netsurf.png" alt="NetSurf"></a></h1>
 
 <div class="navigation">
 <div class="navsection">
 <ul>
-<li><a href="/about/">About NetSurf</a></li>
-<li><a href="/downloads/">Downloads</a></li>
-<li><a href="/documentation/">Documentation</a></li>
-<li><a href="/developers/">Development area</a></li>
-<li><a href="/webmasters/">Webmaster area</a></li>
-<li><a href="/contact/">Contact</a></li>
+<li><a href="about/">About NetSurf</a></li>
+<li><a href="downloads/">Downloads</a></li>
+<li><a href="documentation/">Documentation</a></li>
+<li><a href="developers/">Development area</a></li>
+<li><a href="webmasters/">Webmaster area</a></li>
+<li><a href="contact/">Contact</a></li>
 </ul>
 </div>
 
@@ -25,8 +25,8 @@
 
 <div class="navsection">
 <ul class="sitelinks">
-<li><a href="//wiki.netsurf-browser.org/">Development wiki</a></li>
-<li><a href="//source.netsurf-browser.org/">Git repository viewer</a></li>
+<li><a href="/wiki.netsurf-browser.org/">Development wiki</a></li>
+<li><a href="/source.netsurf-browser.org/">Git repository viewer</a></li>
 <li><a href="https://ci.netsurf-browser.org/">Continuous Integration</a></li>
 <li><a href="https://bugs.netsurf-browser.org/">Bug report system</a></li>
 <li><a href="https://ci.netsurf-browser.org/jenkins/view/Categorized/job/docs-netsurf/doxygen/">Code documentation</a></li>
@@ -46,35 +46,35 @@
 <dt>Sub-projects:</dt>
 <dd>
 <dl>
-<dt><a href="/projects/hubbub/">Hubbub</a></dt>
+<dt><a href="projects/hubbub/">Hubbub</a></dt>
 <dd>HTML5 compliant parsing library</dd>
-<dt><a href="/projects/libcss/">LibCSS</a><dt>
+<dt><a href="projects/libcss/">LibCSS</a><dt>
 <dd>CSS parser and selection library<dd>
-<dt><a href="/projects/libdom/">LibDOM</a></dt>
+<dt><a href="projects/libdom/">LibDOM</a></dt>
 <dd>DOM library</dd>
-<dt><a href="/projects/libparserutils/">LibParserUtils</a><dt>
+<dt><a href="projects/libparserutils/">LibParserUtils</a><dt>
 <dd>Parser building library<dd>
-<dt><a href="/projects/libwapcaplet/">LibWapcaplet</a><dt>
+<dt><a href="projects/libwapcaplet/">LibWapcaplet</a><dt>
 <dd>String internment library<dd>
-<dt><a href="/projects/libsvgtiny/">Libsvgtiny</a></dt>
+<dt><a href="projects/libsvgtiny/">Libsvgtiny</a></dt>
 <dd>SVG Tiny library</dd>
-<dt><a href="/projects/libnsfb/">LibNSFB</a><dt>
+<dt><a href="projects/libnsfb/">LibNSFB</a><dt>
 <dd>Framebuffer Abstraction library<dd>
-<dt><a href="/projects/libnsbmp/">Libnsbmp</a></dt>
+<dt><a href="projects/libnsbmp/">Libnsbmp</a></dt>
 <dd>BMP and ICO decoding library<dd>
-<dt><a href="/projects/libnsgif/">Libnsgif</a></dt>
+<dt><a href="projects/libnsgif/">Libnsgif</a></dt>
 <dd>GIF decoding library<dd>
-<dt><a href="/projects/librosprite/">LibROSprite</a></dt>
+<dt><a href="projects/librosprite/">LibROSprite</a></dt>
 <dd>RISC OS Sprite decoding library<dd>
-<dt><a href="/projects/iconv/">Iconv</a></dt>
+<dt><a href="projects/iconv/">Iconv</a></dt>
 <dd>RISC OS character encoding support module</dd>
-<dt><a href="/projects/rufl/">RUfl</a></dt>
+<dt><a href="projects/rufl/">RUfl</a></dt>
 <dd>RISC OS Unicode font library</dd>
-<dt><a href="/projects/ttf2f/">TTF2f</a><dt>
+<dt><a href="projects/ttf2f/">TTF2f</a><dt>
 <dd>Font converter to RISC OS format<dd>
-<dt><a href="/projects/tinct/">Tinct</a></dt>
+<dt><a href="projects/tinct/">Tinct</a></dt>
 <dd>Advanced RISC OS Sprite plotting module</dd>
-<dt><a href="/projects/libpencil/">Libpencil</a></dt>
+<dt><a href="projects/libpencil/">Libpencil</a></dt>
 <dd>RISC OS Drawfile export library</dd>
 </dl>
 </dd>
@@ -88,7 +88,7 @@
 
 <p>Whether you want to check your webmail, read the news or post to discussion forums, NetSurf is your lightweight gateway to the world wide web. Actively developed, NetSurf is continually evolving and improving.</p>
 
-<div class="frontscreen"><p class="frontscreen"><a href="about/screenshots/"><img src="about/screenshots/images/riscosthumb-wikipedia.png" alt="NetSurf screenshot"> <span class="seemore">See more screenshots</span></a></p></div>
+<div class="frontscreen"><p class="frontscreen"><a href="about/screenshots/"><img src="webimages/riscosthumb-wikipedia.png" alt="NetSurf screenshot"> <span class="seemore">See more screenshots</span></a></p></div>
 
 <p>Written in C, this award winning open source project features its own layout engine. It is licensed under GPL version 2.</p>
 
@@ -107,13 +107,13 @@
 <dd>Despite a myriad of standards to support, NetSurf makes surfing the web enjoyable and stress-free by striving for complete standards compliancy. As an actively developed project, NetSurf aims to stay abreast of new and upcoming web technologies.</dd>
 </dl>
 
-<p>See the <a href="/about/#ProjectGoals">project goals</a> and <a href="/documentation/progress">progress</a> page for further information on where NetSurf is headed.</p>
+<p>See the <a href="about/#ProjectGoals">project goals</a> and <a href="documentation/progress">progress</a> page for further information on where NetSurf is headed.</p>
 
 <h2 id="WantToHelp">Want to help?</h2>
 
-<p>There are always things that need doing, and not enough time in the day, so we'd be delighted if you want to help develop NetSurf. Visit the &quot;<a href="/developers/contribute">How can I help?</a>&quot; page to see ideas for contributing to the project.</p>
+<p>There are always things that need doing, and not enough time in the day, so we'd be delighted if you want to help develop NetSurf. Visit the &quot;<a href="developers/contribute">How can I help?</a>&quot; page to see ideas for contributing to the project.</p>
 
-<p>If you can program and you'd like to improve NetSurf, then we'd love to hear from you. Pick an area you'd like to improve or a feature you want to add and <a href="/contact/">contact the developers</a>. Also, take a look at the <a href="/developers/">developer and contributor</a> area of this site.</p>
+<p>If you can program and you'd like to improve NetSurf, then we'd love to hear from you. Pick an area you'd like to improve or a feature you want to add and <a href="contact/">contact the developers</a>. Also, take a look at the <a href="developers/">developer and contributor</a> area of this site.</p>
 </div>
 
 <div class="frontpagelatestinfo">
@@ -121,10 +121,10 @@
 <div class="downloadbox">
 <div class="downloadcontainer">
 <div class="downloadcontent">
-<h2 id="downloadrelease"><a href="/downloads/">Download NetSurf&nbsp;3.11</a></h2>
+<h2 id="downloadrelease"><a href="downloads/">Download NetSurf&nbsp;3.11</a></h2>
 <ul>
-<li><a href="/downloads/">Prebuilt packages</a></li>
-<li><a href="/downloads/source/">Source code</a></li>
+<li><a href="downloads/">Prebuilt packages</a></li>
+<li><a href="downloads/source/">Source code</a></li>
 </ul>
 </div>
 <div class="topleft"></div>
@@ -138,14 +138,14 @@
 <h2 id="news">Latest news</h2>
 
 <dl class="frontnews">
-<dt><a href="/downloads/">NetSurf 3.11 released</a> <span>28 Dec 2023</span></dt>
+<dt><a href="downloads/">NetSurf 3.11 released</a> <span>28 Dec 2023</span></dt>
 <dd>NetSurf 3.11 features improved page layout with CSS flex support.  It also features many other optimisations and enhancements.  We recommend all users upgrade to NetSurf 3.11.</dd>
-<dt><a href="/downloads/">NetSurf 3.10 released</a> <span>24 May 2020</span></dt>
+<dt><a href="downloads/">NetSurf 3.10 released</a> <span>24 May 2020</span></dt>
 <dd>NetSurf 3.10 features many fixes, better performance and improved functionality.  In particular, handling of authentication, certificates and fetch errors have been updated and unified.  The GTK front end has had a major overhaul too.  We recommend all users upgrade to NetSurf 3.10.</dd>
-<dt><a href="/downloads/">NetSurf 3.9 released</a> <span>18 Jul 2019</span></dt>
+<dt><a href="downloads/">NetSurf 3.9 released</a> <span>18 Jul 2019</span></dt>
 <dd>NetSurf 3.9 features support for CSS Media Queries (level 4) and improvements to JavaScript handling.  Also included are many bug fixes and improvements.  We recommend all users upgrade to NetSurf 3.9.</dd>
 </dl>
-<p class="more"><a href="/about/news" class="seemore">See more news</a></p>
+<p class="more"><a href="about/news" class="seemore">See more news</a></p>
 
 <h2 id="features">NetSurf 3.11 features</h2>
 
@@ -186,7 +186,7 @@
 <p class="award"><a class="award" href="http://www.riscosawards.co.uk/2013/index.html#2-bnp"><img src="/webimages/roalogo.png" alt=""></a>NetSurf won the award for &quot;best non-commercial product&quot; at <a href="http://www.riscosawards.co.uk/2013/index.html">The 2012/2013 RISC OS Awards</a>.</p>
 
 <p class="award"><a class="award" href="http://www.iconbar.com/articles/The_Icon_Bar_Awards_2009/index1244.html"><img src="/webimages/tiba2009.png" alt="" width="89" height="78"></a>NetSurf picked up another accolade, winning in the &quot;best non-commercial product&quot; category at <a href="http://www.iconbar.com/articles/The_Icon_Bar_Awards_2009/index1244.html">The Icon Bar Awards 2009</a>. NetSurf had previously been <a href="http://www.iconbar.com/articles/Nominations_open_for_the_sDrobes_Icon_Bar_awards_2009/index1240.html">nominated</a> by <a href="http://www.iconbar.com/">The Icon Bar</a>'s readers.</p>
-<p class="more"><a href="/about/awards" class="seemore">See more awards</a></p>
+<p class="more"><a href="about/awards" class="seemore">See more awards</a></p>
 
 </div>
 </div>
