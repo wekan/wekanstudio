@@ -81,17 +81,89 @@
   </tr>
   <tr>
     <td colspan="8" bgcolor="#2573a7">
-      <table border="0" cellspacing="0" cellpadding="10" width="100%" id="anothertable">
+      <table border="0" cellspacing="0" cellpadding="10" width="100%" id="starboardtable">
         <tr>
-          {% for _, board in ipairs(boards) do %}
+          <h3>My Starred Boards</h3>
+          {% for _, starboard in ipairs(starboards) do %}
             <td width="50">
-              <a href="/b/{%= counter %}/auto">
+              <a href="/b/{%= starboard._id%}/{%= starboard.slug%}">
                 <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
-                  {%= board.title%}
+                  {%= starboard.title%}
                   <br>
-                  {%= board.description%}
+                  {%= starboard.description%}
                   <br>
-                  {%= board.sort%}
+                  Sort: {%= starboard.type%}
+                  <br>
+                  Sort: {%= starboard.sort%}
+                  <br>
+                  Stars: {%= starboard.stars%}
+                  <br>
+                  Permission: {%= starboard.permission%}
+                  <br>
+                  Slug: {%= starboard.slug%}
+                  <br>
+                </font>
+              </a>
+            </td>
+          {% end %}
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8" bgcolor="#2573a7">
+      <table border="0" cellspacing="0" cellpadding="10" width="100%" id="nostarboardtable">
+        <tr>
+           <h3>My Boards</h3>
+          {% for _, nostarboard in ipairs(nostarboards) do %}
+            <td width="50">
+              <a href="/b/{%= nostarboard._id%}/{%= nostarboard.slug%}">
+                <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
+                  {%= nostarboard.title%}
+                  <br>
+                  {%= nostarboard.description%}
+                  <br>
+                  Sort: {%= nostarboard.type%}
+                  <br>
+                  Sort: {%= nostarboard.sort%}
+                  <br>
+                  Stars: {%= nostarboard.stars%}
+                  <br>
+                  Permission: {%= nostarboard.permission%}
+                  <br>
+                  Slug: {%= nostarboard.slug%}
+                  <br>
+                </font>
+              </a>
+            </td>
+          {% end %}
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="8" bgcolor="#2573a7">
+      <table border="0" cellspacing="0" cellpadding="10" width="100%" id="starboardtable">
+        <tr>
+          <h3>Template Boards</h3>
+          {% for _, templateboard in ipairs(templateboards) do %}
+            <td width="50">
+              <a href="/b/{%= templateboard._id%}/{%= templateboard.slug%}">
+                <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
+                  {%= templateboard.title%}
+                  <br>
+                  {%= templateboard.description%}
+                  <br>
+                  Sort: {%= templateboard.type%}
+                  <br>
+                  Sort: {%= templateboard.sort%}
+                  <br>
+                  Stars: {%= templateboard.stars%}
+                  <br>
+                  Permission: {%= templateboard.permission%}
+                  <br>
+                  Slug: {%= templateboard.slug%}
+                  <br>
                 </font>
               </a>
             </td>

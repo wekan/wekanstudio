@@ -208,8 +208,10 @@ local function allboardsList(r)
   local dbconn = pc:dbconn()
   -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where archived='false' AND type='board' order by stars DESC, sort ASC;"))
   -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
-  local boards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' order by stars DESC, type ASC, sort ASC;"))
-  return fm.serveContent("boards/allboardsList", {boards = boards})
+  local starboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND stars>0 AND type='board' order by stars DESC, type ASC, sort ASC;"))
+  local nostarboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND stars=0 AND type='board' order by stars DESC, type ASC, sort ASC;"))
+  local templateboards = assert(dbconn:query("select _id, title, description, color, stars, permission, slug, type, sort from boards where members like '%jmBkZ4KqncQuKWM9r%' AND archived='false' AND type='%template%' order by stars DESC, type ASC, sort ASC;"))
+  return fm.serveContent("boards/allboardsList", {starboards=starboards, nostarboards=nostarboards, templateboards=templateboards })
 end
 
 local function allboardsList2(r)
