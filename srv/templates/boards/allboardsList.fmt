@@ -1,81 +1,109 @@
 {% function block.content() %}
 
-<table border="0" cellpadding="0" cellspacing="0">
+<table border="0" cellspacing="0" cellpadding="10" width="100%" id="bodytable">
   <tr>
-    <td style="padding-top: 4px; padding-left: 4px; padding-bottom: 10px; padding-right: 4px; 
-               width: 10%; color: white; background-color: #2573a7; border: 0px;">
-      <img src="images/logo-header.png" alt="WeKan ®" title="WeKan ®" />
+    <td colspan="8" valign="top" valign="center" align="left" bgcolor="#2573a7">
+      <img src="images/logo-header.png" alt="WeKan ®" title="WeKan ®">
       &nbsp;&nbsp;&nbsp;
-    </td>
-    <td style="padding-top: 10px; padding-bottom: 0px; width: 90%; color: white; background-color: #2573a7; border: 0px;">
-      <a href="/" style="top: 2px;"><img src="font/arrow/white/home.gif" width="12px" /> All Boards</a>
+      <img src="font/arrow/white/home.gif" width="20" height="auto">
+      &nbsp;
+      <font size="3" color="#FFFFFF" face="arial">All Boards</font>
       &nbsp;&nbsp;&nbsp;
-
       <a href="/b/D2SzJKZDS4Z48yeQH/wekan-r-open-source-kanban-board-with-mit-license">
-        WeKan ® Open Source Kanban board with MIT license
+        <font size="3" color="#FFFFFF" face="arial">
+          WeKan ® Open Source Kanban board with MIT license
+        </font>
       </a>
       &nbsp;&nbsp;&nbsp;
 
       <a href="/b/JctQEtkayWXTTJyzt/wekan-multiverse">
-        WeKan Multiverse
+        <font size="3" color="#FFFFFF" face="arial">
+          WeKan Multiverse
+        </font>
       </a>
       &nbsp;&nbsp;&nbsp;
 
       <a title="Show desktop drag handles" alt="Show desktop drag handles" href="#" aria-label="Show desktop drag handles">
-        <img src="font/arrow/white/arrows.gif" width="12px" />
-        <img src="font/arrow/white/ban.gif" width="12px" />
+        <img src="font/arrow/white/arrows.gif" width="20px">
+        <img src="font/arrow/white/ban.gif" width="20px">
       </a>
       &nbsp;&nbsp;&nbsp;
 
-      <span style="float: right;">
-        <a href="notifications" name="Notifications"><img src="font/notification/white/bell.gif" width="12px" /></a>
-        &nbsp;&nbsp;&nbsp;
+      <a href="notifications" name="Notifications"><img src="font/notification/white/bell.gif" width="20px"></a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <a href="usersettings" name="UserSettings"><img src="font/setting/white/cog.gif" width="12px" /></a>
-        User Name
-        &nbsp;&nbsp;&nbsp;
-      </span>
+      <a href="usersettings" name="UserSettings"><img src="font/setting/white/cog.gif" width="20px">
+        &nbsp;
+        <font size="3" color="#FFFFFF" face="arial">
+          User Name
+        </font>
+      </a>
+      &nbsp;&nbsp;&nbsp;
     </td>
   </tr>
-</table>  
+  <tr>
+    <td colspan="8" bgcolor="#2980b9">
+        <font size="5" color="#FFFFFF" face="arial">
+          <b>My Boards</b>
+        </font>
+      <br>
+      <button title="Add Board" href="#" aria-label="Add Board">Add Board</button>
+      &nbsp;&nbsp;&nbsp;
+      <font size="3" color="#FFFFFF" face="arial">
+        Selected:
+      </font>
+      <img src="font/star.gif" width="20" height="auto"><button class="js-star-board" title="Click to star board. It will show at top of your board list." aria-label="Click to star board. It will show at top of your board list.">Star</button>
+      <img src="font/arrow/white/duplicate.gif" width="20" height="auto"><button class="js-clone-board" title="Duplicate board" aria-label="Duplicate board">Duplicate</button>
+      <img src="font/arrow/white/archive.gif" width="20" height="auto"><button class="js-archive-board" title="Move to Archive" aria-label="Move to Archive">Move to Archive</button>
+      <font size="3" color="#FFFFFF" face="arial">
+        Orgs | Teams
+      </font>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3" bgcolor="#2573a7">
 
-<div id="header" class="">
-  <div id="header-main-bar" class="wrapper">
-    <h1>My Boards</h1>
-  </div>
-</div>
 
-<div id="content">
-    
-  <div class="wrapper">
-
-    <ul class="AllBoardTeamsOrgs">
-      <li class="AllBoardTeams"></li>
-      <li class="AllBoardOrgs"></li>
-      <li class="AllBoardBtns"><div class="AllBoardButtonsContainer"></div></li>
-    </ul>
-
-    Selected:
-    <button class="js-star-board" title="Click to star board. It will show at top of your board list." aria-label="Click to star board. It will show at top of your board list.">⭐ Star</button>
-    <button class="js-clone-board" title="Duplicate board" aria-label="Duplicate board">⎘ Duplicate</button>
-    <button class="js-archive-board" title="Move to Archive" aria-label="Move to Archive">🗑 Move to Archive</button>
-
-    <ul class="board-list clearfix js-boards ui-sortable">
-      <li class="js-add-board js-board">
-        <a class="board-list-item label" title="Add Board" href="#" aria-label="Add Board">Add Boards</a>
-      </li>
-
+      <font size="4" color="#FFFFFF" bgcolor="#2980b9" face="arial">
+        <u><b>Board name</b></u>
+      </font>
+    </td>
+    <td colspan="3" bgcolor="#2573a7">
+      <font size="4" color="#FFFFFF" bgcolor="#2980b9" face="arial">
+        <u><b>Description</b></u>
+      </font>
+    </td>
+    <td colspan="2" bgcolor="#2573a7">
+      <font size="4" color="#FFFFFF" bgcolor="#2980b9" face="arial">
+        <u><b>Color</b></u>
+      </font>
+    </td>
+  </tr>
+  {% counter = 1 %}
   {% for _, board in ipairs(boards) do %}
-      <li class="tWyYpzNFCiRbt9W74 board-color-{%= board.color%} js-board ui-sortable-handle">
-        <a class="js-open-board board-list-item" href="/b/tWyYpzNFCiRbt9W74/auto">
-          <span class="details">
-            <span class="board-list-item-name" title="Order board icons with drag drop. Click board icon to open board.">
-              <div class="viewer" dir="auto"><p>{%= board.title%}</p></div>
-            </span>
-            <p class="board-list-item-desc"><div class="viewer" dir="auto"><p>{%= board.description%}</p></div></p>
-          </span>
+    {% if counter == 1 %}
+    <tr>
+    {% end %}
+      <td colspan="2" bgcolor="#2573a7">
+        <a href="/b/{%= counter %}/auto">
+          <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
+            {%= board.title%}
+            <br>
+            {%= board.description%}
+            <br>
+            {%= board.sort%}
+          </font>
         </a>
-      </li>
+      </td>
+      {% if counter == 4 %}
+        </tr>
+        {% counter = 1 %}
+      {% end %}
+    {% end %}
   {% end %}
+  {% if not counter == 1 %}
+    </tr>
+  {% end %}
+</table>
 {% end %}
 {% render('layout',  {active_menu='allboards'}) %}
