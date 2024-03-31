@@ -220,10 +220,6 @@ local function allboardsList3(r)
   return fm.serveContent("boards/allboardsList3", {})
 end
 
-local function netsurfList(r)
-  return fm.serveContent("netsurf", {})
-end
-
 local function signIn(r)
   return fm.serveContent("signIn", {})
 end
@@ -247,7 +243,6 @@ fm.setRoute(fm.GET "/vets", vetList)
 fm.setRoute(fm.GET "/allboards",  allboardsList)
 fm.setRoute(fm.GET "/allboards2", allboardsList2)
 fm.setRoute(fm.GET "/allboards3", allboardsList3)
-fm.setRoute(fm.GET "/netsurf", netsurfList)
 fm.setRoute(fm.GET "/sign-in", signIn)
 fm.setRoute(fm.GET "/sign-up", signUp)
 fm.setRoute(fm.GET "/forgot-password", forgotPassword)
