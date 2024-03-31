@@ -80,19 +80,25 @@
     </td>
   </tr>
   <tr>
-  {% for _, board in ipairs(boards) do %}
-    <td colspan="2" bgcolor="#2573a7">
-      <a href="/b/{%= counter %}/auto">
-        <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
-          {%= board.title%}
-          <br>
-          {%= board.description%}
-          <br>
-          {%= board.sort%}
-        </font>
-      </a>
+    <td colspan="8" bgcolor="#2573a7">
+      <table border="0" cellspacing="0" cellpadding="10" width="100%" id="anothertable">
+        <tr>
+          {% for _, board in ipairs(boards) do %}
+            <td width="50">
+              <a href="/b/{%= counter %}/auto">
+                <font size="3" color="FFFFFF" bgcolor="#2980b9" face="arial">
+                  {%= board.title%}
+                  <br>
+                  {%= board.description%}
+                  <br>
+                  {%= board.sort%}
+                </font>
+              </a>
+            </td>
+          {% end %}
+        </tr>
+      </table>
     </td>
-  {% end %}
   </tr>
 </table>
 {% end %}
