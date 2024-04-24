@@ -3,7 +3,7 @@
 -- Copyright 2021-23 Paul Kulchenko
 --
 
-local NAME, VERSION = "fullmoon", "0.377"
+local NAME, VERSION = "fullmoon", "0.383"
 
 --[[-- support functions --]]--
 
@@ -215,7 +215,7 @@ local function genEnv(opt)
           -- support the case of printing/concatenating undefined values
           -- tostring handles conversion to a string
           __tostring = function() return "" end,
-          -- concat handles contatenation with a string
+          -- concat handles concatenation with a string
           __concat = function(a, _) return a end,
           __index = (istable and table or nil),
           __call = function(t, v, ...)
@@ -502,18 +502,22 @@ local function findRoute(route, opts)
     end
   end
 end
-local function setRoute(opts, handler)
+local function setRoute(opts, ...)
   local ot = type(opts)
   if ot == "string" then
     opts = {opts}
   elseif ot == "table" then
-    if #opts == 0 then argerror(false, 1, "(one or more routes expected)") end
+    argerror(#opts > 0, 1, "(one or more routes expected)", "setRoute")
   else
-    argerror(false, 1, "(string or table expected)")
+    argerror(false, 1, "(string or table expected)", "setRoute")
   end
   -- as the handler is optional, allow it to be skipped
+  local pnum, handler = select('#', ...), ...
   local ht = type(handler)
-  argerror(ht == "function" or ht == "string" or ht == "nil", 2, "(function or string expected)")
+  -- allow empty, but not `nil` handler (so `setRoute('foo')`, but not `setRoute('foo', nil)`)
+  -- this protects against typos in handler names being silently accepted
+  argerror(ht == "function" or ht == "string" or (ht == "nil" and pnum == 0),
+    2, "(function or string expected)", "setRoute")
   if ht == "string" then
     -- if `handler` is a string, then turn it into a handler that does
     -- internal redirect (to an existing path), but not a directory.
@@ -537,7 +541,10 @@ local function setRoute(opts, handler)
           table.insert(v, "HEAD") -- add to the list to generate a proper list of methods
           v.HEAD = v.GET
         end
-        if v.regex then v.regex = re.compile(v.regex) or argerror(false, 3, "(valid regex expected)") end
+        if v.regex then
+          v.regex = argerror(re.compile(v.regex),
+            1, ("(valid regex expected for '%s')"):format(k), "setRoute")
+        end
       elseif headerMap[k] then
         opts[k] = {pattern = "%f[%w]"..quote(v).."%f[%W]"}
       end
@@ -547,7 +554,7 @@ local function setRoute(opts, handler)
   while true do
     local route = table.remove(opts, 1)
     if not route then break end
-    argerror(type(route) == "string", 1, "(route string expected)")
+    argerror(type(route) == "string", 1, "(route string expected)", "setRoute")
     local pos = findRoute(route, opts) or #routes+1
     if opts.routeName then
       if routes[opts.routeName] then LogWarn("route '%s' already registered", opts.routeName) end
@@ -654,9 +661,21 @@ end
 
 --[[-- storage engine --]]--
 
+local sqlite3
 local NONE = {}
+local dbmt = { -- share one metatable among all DBM objects
+  -- simple __index = db doesn't work, as it gets `dbm` passed instead of `db`,
+  -- so remapping is needed to proxy this to `t.db` instead
+  __index = function(t,k)
+    if sqlite3[k] then return sqlite3[k] end
+    local db = rawget(t, "db")
+    return db and db[k] and function(self,...) return db[k](db,...) end or nil
+  end,
+  __gc = function(t) return t:close() end,
+  __close = function(t) return t:close() end
+}
 local function makeStorage(dbname, sqlsetup, opts)
-  local sqlite3 = require "lsqlite3"
+  sqlite3 = sqlite3 or require "lsqlite3"
   if type(sqlsetup) == "table" and opts == nil then
     sqlsetup, opts = nil, sqlsetup
   end
@@ -675,34 +694,50 @@ local function makeStorage(dbname, sqlsetup, opts)
   local dbm = {NONE = NONE, prepcache = {}, pragmas = {},
     name = dbname, sql = sqlsetup, opts = opts or {}}
   local msgdelete = "use delete option to force"
-
-  function dbm:init()
-    local db = self.db
-    if not db then
-      local code, msg
-      db, code, msg = sqlite3.open(self.name, flags)
-      if not db then error(("%s (code: %d)"):format(msg, code)) end
-      -- __gc handler on the DB object will close it, which can happen multiple times
-      -- for forked connections and needs to be prevented, as closing one may affect
-      -- the others due to the way POSIX advisory locks behave on file handlers):
-      -- https://sqlite.org/howtocorrupt.html#_posix_advisory_locks_canceled_by_a_separate_thread_doing_close_
-      if debug.getmetatable(db) then debug.getmetatable(db).__gc = nil end
-      db:busy_timeout(1000) -- configure wait on busy DB to allow serialized writes
-      if self.sql and db:exec(self.sql) > 0 then error("can't setup db: "..db:errmsg()) end
-      self.db = db
-      self.prepcache = {}
-      self.pid = unix.getpid()
+  local function getPragmas(sql)
+    local pragmas = {}
+    for p in (sql or ""):gmatch("%s*([^;]+)") do
+      if not p:lower():find("pragma ") then break end
+      table.insert(pragmas, p)
     end
-    -- simple __index = db doesn't work, as it gets `dbm` passed instead of `db`,
-    -- so remapping is needed to proxy this to `t.db` instead
-    return setmetatable(self, {
-      __index = function(t,k)
-          if sqlite3[k] then return sqlite3[k] end
-          local db = rawget(t, "db")
-          return db and db[k] and function(self,...) return db[k](db,...) end or nil
-      end,
-      __close = function(t) return t:close() end
-    })
+    return table.concat(pragmas, ";")
+  end
+  function dbm:init(reopen)
+    local db = self.db
+    -- if this is a forked process with a connection opened elsewhere,
+    -- then need to re-open the connection to avoid bad things:
+    -- https://sqlite.org/howtocorrupt.html#_carrying_an_open_database_connection_across_a_fork_
+    -- (but don't re-open temp/inmemory and read-only DBs, as it's not needed)
+    if db and reopen then
+      -- reset the pid even when re-opening is skipped, so that it's not repeated
+      self.pid = unix.getpid()
+      if db:db_filename("main") ~= "" and (not db.readonly or not db:readonly()) then
+        db = false
+      end
+    end
+    if db then return self end
+
+    local skipexec = db == false
+    local code, msg
+    db, code, msg = sqlite3.open(self.name, flags)
+    if not db then error(("%s (code: %d)"):format(msg, code)) end
+    -- __gc handler on the DB object will close it, which can happen multiple times
+    -- for forked connections and needs to be prevented, as closing one may affect
+    -- the others due to the way POSIX advisory locks behave on file handlers):
+    -- https://sqlite.org/howtocorrupt.html#_posix_advisory_locks_canceled_by_a_separate_thread_doing_close_
+    if debug.getmetatable(db) then debug.getmetatable(db).__gc = nil end
+    db:busy_timeout(1000) -- configure wait on busy DB to allow serialized writes
+    -- skipexec indicates that a shortcut can be taken to set up the DB,
+    -- but the pragmas still need to be processed to have the correct configuration
+    local pragmas = skipexec and self.sql and getPragmas(self.sql)
+    if pragmas and db:exec(pragmas) > 0
+    or not skipexec and self.sql and db:exec(self.sql) > 0 then
+      error("can't setup db: "..db:errmsg())
+    end
+    self.db = db
+    self.prepcache = {}
+    self.pid = unix.getpid()
+    return setmetatable(self, dbmt)
   end
   local function norm(sql)
     return (sql:gsub("%-%-[^\n]*\n?",""):gsub("^%s+",""):gsub("%s+$",""):gsub("%s+"," ")
@@ -722,13 +757,15 @@ local function makeStorage(dbname, sqlsetup, opts)
     -- only close the DB when done from the same process that opened it
     -- to avoid closing the DB from a forked process,
     -- which is likely to mess up POSIX locks
-    if self.db and self.pid == unix.getpid() then return self.db:close() end
+    local db = self.db
+    if db and self.pid == unix.getpid() then
+      self.db = false -- mark it as re-openable
+      return db:close()
+    end
   end
   local function fetch(self, query, one, ...)
-    -- if this is a forked process with a connection opened elsewhere,
-    -- then need to re-open the connection to avoid bad things:
-    -- https://sqlite.org/howtocorrupt.html#_carrying_an_open_database_connection_across_a_fork_
-    if self.pid ~= unix.getpid() then self.db = false end
+    -- re-open the connection if this is a forked process; see comment in `dbm:init()`
+    if self.pid ~= unix.getpid() then self:init(true) end
     if not self.db then self:init() end
     local trace = self.opts.trace
     local start = trace and getTimeNano()
@@ -741,7 +778,9 @@ local function makeStorage(dbname, sqlsetup, opts)
       if not stmt then return nil, "can't prepare: "..self.db:errmsg() end
       -- if the last statement is incomplete
       if not stmt:isopen() then break end
-      if stmt:bind_values(...) > 0 then
+      -- if the first parameter is a table, then use it to bind parameters by name
+      local tbl = select(1, ...)
+      if (type(tbl) == "table" and stmt:bind_names(tbl) or stmt:bind_values(...)) ~= sqlite3.OK then
         return nil, "can't bind values: "..self.db:errmsg()
       end
       for row in stmt:nrows() do
@@ -759,9 +798,10 @@ local function makeStorage(dbname, sqlsetup, opts)
   local function exec(self, stmt, ...) return fetch(self, stmt, nil, ...) end
   local function dberr(db) return nil, db:errmsg() end
   function dbm:execute(list, ...)
-    -- if the first parameter is not table, use regular exec
+    -- if the first parameter is not table, use regular `exec`
     if type(list) ~= "table" then return exec(self, list, ...) end
-    if self.pid ~= unix.getpid() then self.db = false end
+    -- re-open the connection if this is a forked process; see comment in `dbm:init()`
+    if self.pid ~= unix.getpid() then self:init(true) end
     if not self.db then self:init() end
     local db = self.db
     local changes = 0
@@ -798,7 +838,7 @@ local function makeStorage(dbname, sqlsetup, opts)
 
   function dbm:upgrade(opts)
     opts = opts or {}
-    local actual = self.db and self or error("can't ungrade non initialized db")
+    local actual = self.db and self or error("can't upgrade non initialized db")
     local pristine = makeStorage(":memory:", self.sql)
     local sqltbl = [[SELECT name, sql FROM sqlite_schema
       WHERE type = 'table' AND name not like 'sqlite_%']]
@@ -1498,7 +1538,7 @@ fm.setTemplate("fmt", {
           return writer(htm)
           ..(val ~= EOT -- this is not the suffix
             and (pref == "" -- this is a code fragment
-              and val:gsub("%-%-(.*)", decomment).." "
+              and val:gsub("%-%-([^\r\n]*)", decomment).." "
               or ("Write(%s(tostring(%s or '')))")
                 :format(pref == "&" and "escapeHtml" or "",
                         val:gsub("%-%-(.*)", decomment)))
