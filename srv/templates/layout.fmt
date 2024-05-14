@@ -15,6 +15,34 @@
   <meta name="application-name" content="Wekan">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
+
+    <style>
+        .kanban {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin: 0 auto;
+        }
+        .column {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            width: 25%;
+        }
+        .column h3 {
+            text-align: center;
+        }
+        .card {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #eee;
+            cursor: grab;
+        }
+        .card:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,6 +50,32 @@
 {% function block.content() %}
 {% end %}
 {% block.content() %}
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const columns = document.querySelectorAll('.column');
+
+        cards.forEach(card => {
+            card.addEventListener('dragstart', function() {
+                this.classList.add('dragging');
+            });
+
+            card.addEventListener('dragend', function() {
+                this.classList.remove('dragging');
+            });
+        });
+
+        columns.forEach(column => {
+            column.addEventListener('dragover', function(event) {
+                if (event.target.classList.contains('card')) {
+                    return;
+                }
+                event.preventDefault();
+                const draggingCard = document.querySelector('.dragging');
+                this.appendChild(draggingCard);
+            });
+        });
+    </script>
 
 </body>
 
