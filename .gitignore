@@ -40,9 +40,7 @@ luac.out
 *.hex
 
 .idea/*
-redbean.*
-*.com
-*.com.template
+wekan.com
 *.db
 
 # Mac
