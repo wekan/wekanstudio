@@ -4,7 +4,7 @@ sudo sh -c "echo ':APE:M::MZqFpD::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/regis
 sudo sh -c "echo ':APE-jart:M::jartsr::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register"
 
 # Copy redbean.com.template to wekan.com
-cp -f bin/redbean.com wekan.com
+cp -f redbean.com.template wekan.com
 
 # Add all files from srv directory to zip file at end of wekan.com
 cd srv/
