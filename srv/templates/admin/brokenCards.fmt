@@ -1,0 +1,6 @@
+{% function block.content() %}
+
+<h1>Broken Cards</h1>
+
+{% end %}
+{% render('layout',  {active_menu='brokenCards'}) %}

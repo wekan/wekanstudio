@@ -1,0 +1,6 @@
+{% function block.content() %}
+
+<h1>Global Search</h1>
+
+{% end %}
+{% render('layout',  {active_menu='global-search'}) %}

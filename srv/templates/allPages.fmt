@@ -1,0 +1,32 @@
+{% function block.content() %}
+
+<h2>WeKan</h2>
+
+<p><a href="/">All Pages</a></p>
+
+<p><b>Login</b>: <a href="/sign-in">Sign In</a> - <a href="/sign-up">Sign Up</a>
+ - <a href="/forgot-password">Forgot Password</a></p>
+
+<p><b>Pet</b>: <a href="/owners/new">New Owner</a>
+ - <a href="/owners/find">Find Owners</a></p>
+
+<p><b>Boards</b>: <a href="/allboards">All Boards</a>
+ - <a href="/allboards2">All Boards 2</a> - <a href="/allboards3">All Boards 3</a> -
+
+<a href="/public">Public</a> - <a href="/board">Board</a>
+ - <a href="/shortcuts">Shortcuts</a> - <a href="/templates">Templates</a></p>
+
+<p><b>Cards</b>: <a href="/my-cards">My Cards</a>
+ - <a href="/due-cards">Due Cards</a> - <a href="/import">Import</a></p>
+
+<p><b>Search</b>: <a href="/global-search">Global Search</a>
+
+<p><b>Admin</b>: <a href="/broken-cards">Broken Cards</a> - <a href="/setting">Setting</a>
+ - <a href="/information">Information</a> - <a href="/people">People</a>
+ - <a href="/admin-reports">Admin Reports</a> - <a href="/attachments">Attachments</a>
+ - <a href="/translation">Translation</a></p>
+
+<p><b>Error</b>: <a href="/oops">Show Error</a></p>
+
+{% end %}
+{% render('layout', {active_menu='allPages'}) %}

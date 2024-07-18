@@ -1,0 +1,6 @@
+{% function block.content() %}
+
+<h1>Board</h1>
+
+{% end %}
+{% render('layout',  {active_menu='board'}) %}

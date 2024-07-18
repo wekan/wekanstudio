@@ -204,6 +204,24 @@ local function vetList(r)
   return fm.serveContent("vets/vetList", {vets = vets}) 
 end        
 
+-- Login
+
+local function signUp(r)
+  return fm.serveContent("login/signUp", {})
+end
+
+local function forgotPassword(r)
+  return fm.serveContent("login/forgotPassword", {})
+end
+
+-- All Pages
+
+local function allPages(r)
+  return fm.serveContent("allPages", {})
+end
+
+-- Boards
+
 local function allboardsList(r)
   local dbconn = pc:dbconn()
   -- local boards = assert(dbconn:query("select title, description, stars, permission, slug, type, sort from boards where archived='false' AND type='board' order by stars DESC, sort ASC;"))
@@ -222,18 +240,83 @@ local function allboardsList3(r)
   return fm.serveContent("boards/allboardsList3", {})
 end
 
+local function shortcuts(r)
+  return fm.serveContent("boards/shortcuts", {})
+end
+
+local function templates(r)
+  return fm.serveContent("boards/templates", {})
+end
+
+local function board(r)
+  return fm.serveContent("boards/board", {})
+end
+
+local function public(r)
+  return fm.serveContent("boards/public", {})
+end
+
+-- Cards
+
+local function card(r)
+  return fm.serveContent("cards/card", {})
+end
+
+local function myCards(r)
+  return fm.serveContent("cards/myCards", {})
+end
+
+local function dueCards(r)
+  return fm.serveContent("cards/dueCards", {})
+end
+
 local function signIn(r)
-  return fm.serveContent("signIn", {})
+  return fm.serveContent("login/signIn", {})
 end
 
-local function signUp(r)
-  return fm.serveContent("signUp", {})
+-- Search
+
+local function globalSearch(r)
+  return fm.serveContent("search/globalSearch", {})
 end
 
-local function forgotPassword(r)
-  return fm.serveContent("forgotPassword", {})
+-- Admin
+
+local function adminReports(r)
+  return fm.serveContent("admin/adminReports", {})
 end
 
+local function attachments(r)
+  return fm.serveContent("admin/attachments", {})
+end
+
+local function brokenCards(r)
+  return fm.serveContent("admin/brokenCards", {})
+end
+
+local function information(r)
+  return fm.serveContent("admin/information", {})
+end
+
+local function people(r)
+  return fm.serveContent("admin/people", {})
+end
+
+local function translation(r)
+  return fm.serveContent("admin/translation", {})
+end
+
+local function adminSettings(r)
+  return fm.serveContent("admin/adminSettings", {})
+end
+
+-- Import Export
+
+local function import(r)
+  return fm.serveContent("importexport/import", {})
+end
+
+fm.setRoute("/", allPages)
 fm.setRoute("/owners/new", newOwner)
 fm.setRoute(fm.GET "/owners/find", findOwners)
 fm.setRoute(fm.GET "/owners/:id[%d]", showOwner)
@@ -248,8 +331,45 @@ fm.setRoute(fm.GET "/allboards3", allboardsList3)
 fm.setRoute(fm.GET "/sign-in", signIn)
 fm.setRoute(fm.GET "/sign-up", signUp)
 fm.setRoute(fm.GET "/forgot-password", forgotPassword)
-fm.setRoute(fm.GET "/", signIn)
 fm.setRoute(fm.GET "/oops", showError)
+fm.setRoute(fm.GET "/public", public)
+-- fm.setRoute(fm.GET "/b/:id/:slug", board)
+fm.setRoute(fm.GET "/board", board)
+-- fm.setRoute(fm.GET "/b/:boardId/:slug/:cardId", card)
+fm.setRoute(fm.GET "/card", card)
+fm.setRoute(fm.GET "/shortcuts", shortcuts)
+fm.setRoute(fm.GET "/templates", templates)
+fm.setRoute(fm.GET "/my-cards", myCards)
+fm.setRoute(fm.GET "/due-cards", dueCards)
+fm.setRoute(fm.GET "/global-search", globalSearch)
+fm.setRoute(fm.GET "/broken-cards", brokenCards)
+fm.setRoute(fm.GET "/import", import)
+fm.setRoute(fm.GET "/setting", adminSettings)
+fm.setRoute(fm.GET "/information", information)
+fm.setRoute(fm.GET "/people", people)
+fm.setRoute(fm.GET "/admin-reports", adminReports)
+fm.setRoute(fm.GET "/attachments", attachments)
+fm.setRoute(fm.GET "/translation", translation)
+
+-- // We maintain a list of redirections to ensure that we don't break old URLs
+-- // when we change our routing scheme.
+-- const redirections = {
+--   '/boards': '/',
+--   '/boards/:id/:slug': '/b/:id/:slug',
+--   '/boards/:id/:slug/:cardId': '/b/:id/:slug/:cardId',
+--  '/import': '/import/trello',
+--};
+--
+--_.each(redirections, (newPath, oldPath) => {
+--  FlowRouter.route(oldPath, {
+--    triggersEnter: [
+--      (context, redirect) => {
+--        redirect(FlowRouter.path(newPath, context.params));
+--      },
+--    ],
+--  });
+--});
+
 
 -- set static assets
 fm.setRoute("/*", "/assets/*")
