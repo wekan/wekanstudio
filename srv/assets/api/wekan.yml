@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   title: Wekan REST API
-  version: v7.30
+  version: v7.55
   description: |
     The REST API allows you to control and extend Wekan with ease.
 
@@ -963,6 +963,41 @@ paths:
             properties:
               board_cards_count:
                 type: integer
+  /api/boards/{board}/copy:
+    post:
+      operationId: copy_board
+      summary: Copy a board to a new one
+      description: |
+        If your are board admin or wekan admin, this copies the
+         given board to a new one.
+      tags:
+        - Boards
+      consumes:
+        - multipart/form-data
+        - application/json
+      parameters:
+        - name: title
+          in: formData
+          description: |
+            the title of the new board (default to old one)
+          type: string
+          required: true
+        - name: board
+          in: path
+          description: |
+            the board
+          type: string
+          required: true
+      produces:
+        - application/json
+      security:
+          - UserSecurity: []
+      responses:
+        '200':
+          description: |-
+            200 response
+          schema:
+            type: string
   /api/boards/{board}/custom-fields:
     get:
       operationId: get_all_custom_fields
@@ -2503,6 +2538,36 @@ paths:
                   type: string
                 listId:
                   type: string
+  /api/boards/{board}/title:
+    put:
+      operationId: update_board_title
+      summary: Update the title of a board
+      tags:
+        - Boards
+      consumes:
+        - multipart/form-data
+        - application/json
+      parameters:
+        - name: title
+          in: formData
+          description: |
+            the new title for the board
+          type: string
+          required: true
+        - name: board
+          in: path
+          description: |
+            the ID of the board to update
+          type: string
+          required: true
+      produces:
+        - application/json
+      security:
+          - UserSecurity: []
+      responses:
+        '200':
+          description: |-
+            200 response
   /api/boards_count:
     get:
       operationId: get_boards_count
@@ -2645,6 +2710,8 @@ definitions:
           - modern
           - moderndark
           - exodark
+          - cleandark
+          - cleanlight
       backgroundImageURL:
         description: |
            The background image URL of the board.
@@ -3369,9 +3436,6 @@ definitions:
         description: |
            poker estimation value
         type: number
-    required:
-      - question
-      - allowNonBoardMembers
   CardsCustomfields:
     type: object
   ChecklistItems:
@@ -3671,6 +3735,10 @@ definitions:
         description: |
            The type of list
         type: string
+      collapsed:
+        description: |
+           is the list collapsed
+        type: boolean
     required:
       - title
       - archived
@@ -3679,6 +3747,7 @@ definitions:
       - createdAt
       - modifiedAt
       - type
+      - collapsed
   ListsWiplimit:
     type: object
     properties:
@@ -3770,6 +3839,10 @@ definitions:
         description: |
            The type of swimlane
         type: string
+      collapsed:
+        description: |
+           is the swimlane collapsed
+        type: boolean
     required:
       - title
       - archived
@@ -3777,3 +3850,4 @@ definitions:
       - createdAt
       - modifiedAt
       - type
+      - collapsed
