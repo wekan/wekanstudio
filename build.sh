@@ -5,6 +5,11 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo sh -c "echo ':APE-jart:M::jartsr::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register"
 fi
 
+# Android Termux
+if [[ "$OSTYPE" == "linux-android" ]]; then
+  pkg install blink git zip 
+fi
+
 # https://redbean.dev
 # redbean v3.0.0 was released on 2024-08-17.
 # redbean-3.0.0.com
@@ -20,5 +25,10 @@ zip -r ../wekan.com `ls -A`
 cd ..
 chmod +x wekan.com
 
-# Start WeKan
-./wekan.com
+# Android Termux
+if [[ "$OSTYPE" == "linux-android" ]]; then
+  blink wekan.com
+else
+  # Others
+  ./wekan.com
+fi
