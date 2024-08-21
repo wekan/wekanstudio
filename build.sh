@@ -1,3 +1,11 @@
+# See textfile bin/SOURCE about source code of binaries of bin directory
+#
+ARCH="$(uname -m)"
+
+if [[ "$ARCH" != "x86_64" && "$ARCH" != "aarch64" && "$ARCH" != "s390x"]] ; then
+  echo "Unsupported architecture: $ARCH"
+  exit
+fi
 
 # Linux: Make redbean executeable file type working
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
@@ -10,14 +18,8 @@ if [[ "$OSTYPE" == "linux-android" ]]; then
   pkg install blink git zip 
 fi
 
-# https://redbean.dev
-# redbean v3.0.0 was released on 2024-08-17.
-# redbean-3.0.0.com
-# 5.5m - PE+ELF+MachO+ZIP+SH for AMD64 and ARM64 (source code)
-# 382f1288bb96ace4bab5145e7df236846c33cc4f1be69233710682a9e71e7467
-
 # Copy redbean.com.template to wekan.com
-cp -f redbean-3.0.0.com.template wekan.com
+cp -f bin/redbean-3.0.0.com wekan.com
 
 # Add all files from srv directory to zip file at end of wekan.com
 cd srv/
@@ -28,7 +30,13 @@ chmod +x wekan.com
 # Android Termux
 if [[ "$OSTYPE" == "linux-android" ]]; then
   blink wekan.com
+elif [[ "$ARCH" == "riscv64" ]]; then
+  chmod +x bin/blink-linux-riscv64
+  ./bin/blink-linux-riscv64 wekan.com
+elif [[ "$ARCH" == "s390x" ]]; then
+  chmod +x bin/blink-linux-s390x
+  ./bin/blink-linux-s390x wekan.com
 else
-  # Others
+  # Others: Linux/BSD/Mac
   ./wekan.com
 fi

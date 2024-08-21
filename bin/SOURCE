@@ -1,0 +1,19 @@
+#
+# Binary: bin/redbean-3.0.0.com
+# From website: https://redbean.dev/#download
+# redbean v3.0.0 was built and released on 2024-08-17 by https://github.com/jart
+# 5.5m - PE+ELF+MachO+ZIP+SH for AMD64 and ARM64 (source code)
+# SHA256SUM: 382f1288bb96ace4bab5145e7df236846c33cc4f1be69233710682a9e71e7467  redbean-3.0.0.com
+#
+# Binary: blink-linux-s390x
+# Source code: https://github.com/jart/blink/commit/222064a
+# Compiled by https://github.com/xet7 at 2024-08-21
+# at IBM LinuxOne server donated to WeKan development https://github.com/wekan/wekan/wiki/s390x
+# SHA256SUM: 0261bf486aa6b93192258a635a03b8248d04946845a5e92b93795abf154b26bd  blink-linux-s390x
+#
+# Binary: blink-linux-riscv64
+# Source code at 2024-02-25 from https://github.com/jart/blink
+# Binary from https://github.com/wekan/wekanstudio/releases/tag/0.01
+# Compiled by https://github.com/xet7 at 2024-02-25
+# SHA256SUM: 378dc5f4c0bed9515f13c56711d6445778edfd48b885818f82ac160b78d539c2  blink-linux-riscv64
+#
