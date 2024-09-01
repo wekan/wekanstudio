@@ -2,10 +2,10 @@
 #
 ARCH="$(uname -m)"
 
-if [[ "$ARCH" != "x86_64" && "$ARCH" != "aarch64" && "$ARCH" != "s390x"]] ; then
-  echo "Unsupported architecture: $ARCH"
-  exit
-fi
+#if [[ "$ARCH" != "x86_64" && "$ARCH" != "aarch64" && "$ARCH" != "s390x"]]; then
+#  echo "Unsupported architecture: $ARCH"
+#  exit
+#fi
 
 # Linux: Make redbean executeable file type working
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
