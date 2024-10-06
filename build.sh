@@ -31,11 +31,11 @@ chmod +x wekan.com
 if [[ "$OSTYPE" == "linux-android" ]]; then
   blink wekan.com
 elif [[ "$ARCH" == "riscv64" ]]; then
-  chmod +x bin/blink-linux-riscv64
   ./bin/blink-linux-riscv64 wekan.com
 elif [[ "$ARCH" == "s390x" ]]; then
-  chmod +x bin/blink-linux-s390x
   ./bin/blink-linux-s390x wekan.com
+elif [[ "$OSTYPE" == "haiku" && "$ARCH" == "x86_64" ]]; then
+  ./bin/blink-haiku-amd64 wekan.com
 else
   # Others: Linux/BSD/Mac
   ./wekan.com

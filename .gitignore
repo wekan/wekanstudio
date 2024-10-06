@@ -46,3 +46,6 @@ wekan.com
 
 # Mac
 .DS_Store
+
+# Blink log
+blink.log
