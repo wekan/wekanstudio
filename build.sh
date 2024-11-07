@@ -14,8 +14,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 # Android Termux
-if [[ "$OSTYPE" == "linux-android" ]]; then
-  pkg install blink git zip 
+if [[ "$OSTYPE" == "linux-android" || "$OSTYPE" == "linux-androideabi" ]]; then
+  pkg install -y blink git zip
 fi
 
 # Copy redbean.com.template to wekan.com
@@ -28,7 +28,7 @@ cd ..
 chmod +x wekan.com
 
 # Android Termux
-if [[ "$OSTYPE" == "linux-android" ]]; then
+if [[ "$OSTYPE" == "linux-android" || "$OSTYPE" == "linux-androideabi" ]]; then
   blink wekan.com
 elif [[ "$ARCH" == "riscv64" ]]; then
   ./bin/blink-linux-riscv64 wekan.com
