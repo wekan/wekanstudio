@@ -19,7 +19,7 @@ if [[ "$OSTYPE" == "linux-android" || "$OSTYPE" == "linux-androideabi" ]]; then
 fi
 
 # Copy redbean.com.template to wekan.com
-cp -f bin/redbean-3.0.0.com wekan.com
+cp -f bin/redbean-4.0.2.com wekan.com
 
 # Add all files from srv directory to zip file at end of wekan.com
 cd srv/
