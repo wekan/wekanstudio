@@ -376,7 +376,7 @@ fm.setRoute("/*", "/assets/*")
 
 function pc.run(port)
     -- start the app on port specified
-    fm.run({ port = port or 8000 })
+    fm.run({ port = port or 7700 })
 end
 
 --- This is now loaded from settings.lua:

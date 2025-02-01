@@ -1,5 +1,7 @@
 # WeKan Studio
 
+At port 7700, srv/.init.lua
+
 ## Screenshot
 
 In WeKan Studio, showing current visual look of `All Boards` page of WeKan Open Source kanban https://wekan.github.io
