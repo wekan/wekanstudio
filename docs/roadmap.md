@@ -10,13 +10,18 @@
 
 ### Pages
 
-- Login
-- Registration
+- Login+Registration
+  - https://kevinfiol.com/blog/a-tour-of-beancms/
 - Profile
   - User name
 - Dashboard
   - Balances
   - Charts
+    - https://echarts.apache.org/en/
+    - https://news.ycombinator.com/item?id=43664455
+  - Maps like
+    - https://leafletjs.com
+    - https://organicmaps.app
 - Transfer
 - Board Settings
   - IFTTT Rules
@@ -24,7 +29,8 @@
 - Admin Panel
 - Also other pages from:
   - https://github.com/wekan/wekan
-  - https://github.com/wekan/php 
+  - https://github.com/wekan/php
+  - https://github.com/wekan/wami
 
 ### Page content
 
@@ -37,6 +43,10 @@
   - https://unpoly.com , better for progressive enhancement with less code changes, recommended by HTMX creator https://www.youtube.com/watch?v=9H5VK9vJ-aw 
   - https://leanrada.com/htmz/ , https://news.ycombinator.com/item?id=39429370
 - Unicode icons. Not Font Awesome.
+- Optional realtime updates:
+  - Datastar using SSE like at fullmoon
+    - https://chrismalek.me/posts/data-star-first-impressions/
+    - https://news.ycombinator.com/item?id=43655914
 
 ### Scheduled actions
 
