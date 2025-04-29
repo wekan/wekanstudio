@@ -133,6 +133,17 @@
   - https://databunker.org
   - https://github.com/securitybunker/databunker#readme
 - Fullmoon also supports this with simple CGI interface: https://github.com/pkulchenko/fullmoon/blob/master/examples/showcase.lua#L115
+- Git Branch feature for data, like duplicate board branch immediately without duplicating data physically
+  - TerminusDB
+    - https://terminusdb.org
+    - https://github.com/terminusdb/terminusdb
+  - Dolt
+    - https://www.dolthub.com
+    - https://github.com/dolthub/dolt
+    - DoltgreSQL https://www.infoq.com/news/2023/11/DoltgreSQL-git-for-data-postgres/#:~:text=Git%2Dfor%2DData%2C%20Version,Dolt%20Gets%20PostgreSQL%2DFlavor%20%2D%20InfoQ
+ - DataBunker
+  - https://databunker.org
+  - https://github.com/securitybunker/databunker
 
 ## About DDoS protection of Redbean
 
