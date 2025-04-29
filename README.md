@@ -37,7 +37,7 @@ Ctrl-c Ctrl-c
 
 - 100%: wekan.com one server executeable
   - 50%: C89 executeable
-    - Cosmopolitan Cross-Platform https://github.com/jart/cosmopolitan
+    - Cosmopolitan Cross-Platform https://github.com/jart/cosmopolitan https://deepwiki.com/jart/cosmopolitan/1-overview
       - BSD/Linux/Mac/Windows x86_64/s390x
       - blink x86_64 emulator: `blink wekan.com`
         - s390x/RISC-V: `git clone https://github.com/cosmopolitan/blink && cd blink && ./configure && make -j$(nproc) && ./blink wekan.com`
